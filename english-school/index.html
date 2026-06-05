@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- =========================================================
+     業種別テンプレート（サンプル）｜こども英会話教室・スクール
+     Web Production / templates/english-school
+     デザイン型：「ものがたりの教室」＝絵本×スクラップブック
+       紙の質感／クレヨンの手描き線／テープ留めポラロイド／手書き注釈／編集的余白
+     ※教室名・写真・料金・住所・電話・講師・口コミはすべてダミー。
+       <!- - TODO - -> マーカー箇所を実情報へ差し替えて納品。
+     ========================================================= -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- TODO: 地域名・教室名を実情報へ（ローカルSEOの要） -->
+<title>豊明市のこども英会話教室｜BRIGHT こども英会話（幼児〜中学生）</title>
+<meta name="description" content="愛知県豊明市のこども英会話教室「BRIGHT こども英会話」。幼児・小学生・中学生のクラス、ネイティブ＆日本人講師のダブルサポート。英語が好きになる、最初の一歩を。無料体験レッスン受付中。">
+<meta name="keywords" content="豊明市,こども英会話,子供英会話,英会話教室,幼児英語,小学生英語,中学生英語,英語スクール,前後駅,愛知県">
+<meta property="og:type" content="website">
+<meta property="og:title" content="豊明市のこども英会話教室｜BRIGHT こども英会話">
+<meta property="og:description" content="愛知県豊明市のこども英会話教室。幼児〜中学生、ネイティブ＆日本人講師。英語が好きになる、最初の一歩を。無料体験レッスン受付中。">
+<meta property="og:locale" content="ja_JP">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 書体：Fraunces(絵本的ソフトセリフ/英字)・Zen Maru Gothic(丸み見出し)・Zen Kaku Gothic New(本文)・Yusei Magic(手書き注釈) -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Yusei+Magic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- ローカルSEO：構造化データ（TODO: 実住所・電話・URL・営業時間へ差し替え） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "BRIGHT こども英会話",
+  "alternateName": "ブライトこども英会話",
+  "description": "愛知県豊明市のこども英会話教室。幼児・小学生・中学生向け。ネイティブ＆日本人講師によるダブルサポート。",
+  "address": { "@type": "PostalAddress", "postalCode": "470-1100", "addressRegion": "愛知県", "addressLocality": "豊明市", "streetAddress": "三崎町0-0" },
+  "telephone": "+81-562-00-0000",
+  "url": "https://example.com/",
+  "areaServed": "豊明市",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "20:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- 紙の質感オーバーレイ（全面・装飾） -->
+<div class="paper-grain" aria-hidden="true"></div>
+
+<!-- ============================ ヘッダー ============================ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="brand">
+      <!-- TODO: 教室名・ロゴ差し替え -->
+      <span class="brand-logo" aria-hidden="true">B</span>
+      <span class="brand-text">
+        <span class="brand-en">BRIGHT</span>
+        <span class="brand-jp">こども英会話 ・ 豊明市</span>
+      </span>
+    </a>
+    <nav class="gnav">
+      <ul class="gnav-list">
+        <li><a href="#feature">特徴</a></li>
+        <li><a href="#course">コース</a></li>
+        <li><a href="#teacher">講師</a></li>
+        <li><a href="#voice">生徒の声</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <!-- TODO: 電話番号差し替え -->
+      <a href="tel:0562000000" class="header-tel">
+        <span class="htel-num">0562-00-0000</span>
+        <span class="htel-label">10:00 - 20:00 / 火〜土</span>
+      </a>
+      <a href="#trial" class="btn btn-primary header-reserve">無料体験</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ ヒーロー ============================ -->
+<section class="hero">
+  <!-- 散らした手描きドゥードル（絵本マージナリア） -->
+  <svg class="doodle dl-sun" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="50" cy="50" r="20"/><path d="M50 8v14M50 78v14M8 50h14M78 50h14M20 20l10 10M70 70l10 10M80 20 70 30M30 70 20 80"/></g></svg>
+  <svg class="doodle dl-scribble" viewBox="0 0 160 40" aria-hidden="true"><path d="M4 20c14-22 28 22 42 0s28 22 42 0 28 22 42 0 24-10 26-6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+  <svg class="doodle dl-arrow" viewBox="0 0 120 80" aria-hidden="true"><path d="M6 12c40 4 78 18 96 50" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/><path d="M86 56l18 8-6-19" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="doodle dl-star s1" aria-hidden="true">✦</span>
+  <span class="doodle dl-star s2" aria-hidden="true">★</span>
+  <span class="doodle dl-abc" aria-hidden="true">ABC</span>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker"><span aria-hidden="true">Hello!</span></p>
+      <p class="hero-eyebrow"><span class="tape" aria-hidden="true"></span>豊明市・前後駅すぐのこども英会話 ／ 幼児〜中学生</p>
+      <h1 class="hero-title">英語が好きになる、<br>
+        <span class="ul">最初の一歩</span>を<br>
+        この街で。
+        <svg class="ul-stroke" viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 15c70-12 240-12 312-3" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+      </h1>
+      <p class="hero-sub">
+        「できた！」がうれしい、「もっと話したい」が止まらない。
+        BRIGHT こども英会話は、ネイティブと日本人講師のダブルサポートで、
+        子どもの“好き”を育てます。<br>まずは無料体験レッスンへ。
+      </p>
+      <div class="hero-actions">
+        <a href="#trial" class="btn btn-primary btn-lg">無料体験レッスンを申し込む</a>
+        <a href="#course" class="btn btn-outline btn-lg">コースを見る</a>
+      </div>
+      <div class="hero-meta">
+        <span class="chip"><b>★ 4.9</b> 保護者満足度</span>
+        <span class="chip"><b>少人数</b> 最大6名クラス</span>
+        <span class="chip"><b>前後駅</b> 徒歩4分</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- レッスン風景の写真。差し替えは assets/hero.jpg を上書き -->
+      <figure class="polaroid hero-polaroid">
+        <span class="washi wt" aria-hidden="true"></span>
+        <span class="washi wb" aria-hidden="true"></span>
+        <img src="assets/hero.jpg" alt="楽しそうにレッスンを受ける子どもたち" loading="lazy">
+        <figcaption>Let’s play in English! ♪</figcaption>
+      </figure>
+      <span class="sticker st-years"><b>15</b><small>年</small><i>豊明で愛されて</i></span>
+      <span class="sticker st-num"><b>320</b><small>名</small><i>卒業生・在籍生</i></span>
+      <span class="hero-bubble" aria-hidden="true">Hi! 👋</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 流れる帯（マーキー） ============================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>BRIGHT こども英会話</span><span class="marquee-dot">✦</span><span>HELLO!</span><span class="marquee-dot">✦</span><span>幼児 ・ 小学生 ・ 中学生</span><span class="marquee-dot">✦</span><span>無料体験 受付中</span><span class="marquee-dot">✦</span>
+    <span>BRIGHT こども英会話</span><span class="marquee-dot">✦</span><span>HELLO!</span><span class="marquee-dot">✦</span><span>幼児 ・ 小学生 ・ 中学生</span><span class="marquee-dot">✦</span><span>無料体験 受付中</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ============================ 特徴 ============================ -->
+<section class="section feature" id="feature">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Why BRIGHT</p>
+      <h2 class="sec-title">BRIGHTが、<span class="marker">選ばれる理由</span></h2>
+      <p class="sec-lead">「楽しい」だけで終わらせない。好きになって、続いて、力になる。<br>そのための4つのこだわりがあります。</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card" style="--accent:var(--c-tomato)">
+        <span class="feature-no" aria-hidden="true">01</span>
+        <div class="feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 0 0 0 18M12 3a14 14 0 0 1 0 18"/></svg></div>
+        <h3 class="feature-title">ネイティブ＋日本人講師</h3>
+        <p class="feature-text">本物の発音はネイティブから、つまずきは日本人講師がやさしくフォロー。ダブルで支えるから安心です。</p>
+      </article>
+      <article class="feature-card" style="--accent:var(--c-sky)">
+        <span class="feature-no" aria-hidden="true">02</span>
+        <div class="feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3M8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13z"/></svg></div>
+        <h3 class="feature-title">最大6名の少人数クラス</h3>
+        <p class="feature-text">一人ひとりに「話す番」がしっかり回ってくる人数。先生の目が届くから、置いていかれません。</p>
+      </article>
+      <article class="feature-card" style="--accent:var(--c-leaf)">
+        <span class="feature-no" aria-hidden="true">03</span>
+        <div class="feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3 class="feature-title">英検・学校の成績にも直結</h3>
+        <p class="feature-text">楽しいだけじゃない。英検対策や学校英語のサポートまで、目に見える成果につなげます。</p>
+      </article>
+      <article class="feature-card" style="--accent:var(--c-marigold)">
+        <span class="feature-no" aria-hidden="true">04</span>
+        <div class="feature-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13a9 9 0 0 1 18 0"/><path d="M12 2v2M3 13h2M19 13h2"/><circle cx="12" cy="13" r="3.2"/><path d="M9 20h6"/></svg></div>
+        <h3 class="feature-title">保護者への毎月レポート</h3>
+        <p class="feature-text">おうちでの様子が見えにくい英語。毎月の成長レポートと面談で、ご家庭と一緒に伸ばします。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ コンセプト ============================ -->
+<section class="section concept" id="concept">
+  <div class="container concept-inner">
+    <div class="concept-visual">
+      <!-- 教室の雰囲気の写真。差し替えは assets/concept.jpg を上書き -->
+      <figure class="polaroid">
+        <span class="washi wt" aria-hidden="true"></span>
+        <img src="assets/concept.jpg" alt="明るい教室で笑顔の先生と子ども" loading="lazy">
+        <figcaption>みんなの「だいすき」が、ここにある。</figcaption>
+      </figure>
+      <svg class="doodle dl-heart" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 35C8 27 3 19 6 12c2-5 9-5 14 1 5-6 12-6 14-1 3 7-2 15-14 23z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="section-head">
+        <p class="sec-eyebrow">Our Concept</p>
+        <h2 class="sec-title">「話せた！」の笑顔が、<br>一生の自信になる。</h2>
+      </div>
+      <p><span class="lead-em">英語を“勉強”にしないこと。</span></p>
+      <p>
+        BRIGHT（ブライト）は「輝く」という意味。子どもたちの目が
+        キラッと輝く瞬間を、何より大切にしています。歌って、踊って、
+        ゲームして——気づいたら英語が口から出ている。そんなレッスンを
+        豊明の街で15年、続けてきました。
+      </p>
+      <p>
+        小さな「できた！」を積み重ねるうちに、英語は“好きなもの”に変わります。
+        好きだから続く。続くから伸びる。その好循環を、ネイティブと日本人講師の
+        チームで丁寧に育てていきます。
+      </p>
+      <p class="concept-sign">スクール代表 ─ 山田 早苗
+        <small>※サンプル。代表者名・肩書きは差し替え可</small>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ コース・クラス ============================ -->
+<section class="section course" id="course">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Courses</p>
+      <h2 class="sec-title">コース・<span class="marker">クラス</span></h2>
+      <p class="sec-lead">年齢と目標に合わせた3つのコース。<br>はじめてのお子さまも、経験者も、ぴったりのクラスが見つかります。</p>
+    </div>
+    <!-- TODO: 料金・回数・時間はサンプル。実情報へ差し替え -->
+    <div class="course-grid">
+      <article class="course-card" style="--accent:var(--c-sky)">
+        <div class="course-photo">
+          <span class="course-tag">幼児</span>
+          <img src="assets/course-kinder.jpg" alt="キンダークラスのレッスン風景" loading="lazy">
+        </div>
+        <div class="course-body">
+          <p class="course-age">対象：2〜6歳（年少〜年長）</p>
+          <h3 class="course-name">キンダークラス<small>Kindergarten</small></h3>
+          <p class="course-desc">歌・ダンス・絵本で“英語の耳”を育てる時期。親子参加クラスもご用意しています。</p>
+          <ul class="course-points">
+            <li>フォニックスで発音の土台づくり</li>
+            <li>遊びながら自然に英語に親しむ</li>
+            <li>週1回・1レッスン45分</li>
+          </ul>
+          <div class="course-foot">
+            <div>
+              <p class="course-price-label">月謝（税込）</p>
+              <p class="course-price">¥7,700<small>/月</small></p>
+            </div>
+            <p class="course-freq">週1回<br>45分</p>
+          </div>
+        </div>
+      </article>
+      <article class="course-card" style="--accent:var(--c-leaf)">
+        <div class="course-photo">
+          <span class="course-tag">小学生</span>
+          <img src="assets/course-elementary.jpg" alt="エレメンタリークラスのレッスン風景" loading="lazy">
+        </div>
+        <div class="course-body">
+          <p class="course-age">対象：小学1〜6年生</p>
+          <h3 class="course-name">エレメンタリー<small>Elementary</small></h3>
+          <p class="course-desc">「聞く・話す」に「読む・書く」を加え、4技能をバランスよく。英検5〜3級も視野に。</p>
+          <ul class="course-points">
+            <li>ネイティブ＋日本人講師の交互レッスン</li>
+            <li>英検対策・学校英語にも対応</li>
+            <li>週1回・1レッスン60分</li>
+          </ul>
+          <div class="course-foot">
+            <div>
+              <p class="course-price-label">月謝（税込）</p>
+              <p class="course-price">¥8,800<small>/月</small></p>
+            </div>
+            <p class="course-freq">週1回<br>60分</p>
+          </div>
+        </div>
+      </article>
+      <article class="course-card" style="--accent:var(--c-berry)">
+        <div class="course-photo">
+          <span class="course-tag">中学生</span>
+          <img src="assets/course-junior.jpg" alt="ジュニアハイクラスのレッスン風景" loading="lazy">
+        </div>
+        <div class="course-body">
+          <p class="course-age">対象：中学1〜3年生</p>
+          <h3 class="course-name">ジュニアハイ<small>Junior High</small></h3>
+          <p class="course-desc">定期テスト・高校入試・英検準2〜2級まで。「使える英語」と「点が取れる英語」を両立。</p>
+          <ul class="course-points">
+            <li>スピーキング＆ライティング強化</li>
+            <li>定期テスト前の集中サポート</li>
+            <li>週1回・1レッスン60分</li>
+          </ul>
+          <div class="course-foot">
+            <div>
+              <p class="course-price-label">月謝（税込）</p>
+              <p class="course-price">¥9,900<small>/月</small></p>
+            </div>
+            <p class="course-freq">週1回<br>60分</p>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="course-note">※ 料金・回数・時間はすべてサンプルです。実際のコース内容に差し替えてご納品します。</p>
+  </div>
+</section>
+
+<!-- ============================ 講師紹介 ============================ -->
+<section class="section teacher" id="teacher">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Teachers</p>
+      <h2 class="sec-title">講師紹介</h2>
+      <p class="sec-lead">「この先生だから、通いたい」。子どもが大好きな、頼れる先生たちです。</p>
+    </div>
+    <!-- TODO: 講師写真・氏名・出身・紹介文を差し替え -->
+    <div class="teacher-grid">
+      <article class="teacher-card">
+        <figure class="polaroid teacher-photo">
+          <span class="washi wt" aria-hidden="true"></span>
+          <span class="teacher-flag">🇺🇸 USA</span>
+          <img src="assets/teacher-mike.jpg" alt="ネイティブ講師 マイク先生" loading="lazy">
+          <figcaption class="teacher-hand">Mike</figcaption>
+        </figure>
+        <p class="teacher-role">Native Teacher</p>
+        <h3 class="teacher-name">Mike <small>マイク先生</small></h3>
+        <p class="teacher-comment">アメリカ出身。子どもを笑わせる天才！ 楽しいレッスンで「英語=好き」をつくります。</p>
+      </article>
+      <article class="teacher-card">
+        <figure class="polaroid teacher-photo">
+          <span class="washi wt" aria-hidden="true"></span>
+          <span class="teacher-flag">🇯🇵 JPN</span>
+          <img src="assets/teacher-sanae.jpg" alt="日本人講師 さなえ先生" loading="lazy">
+          <figcaption class="teacher-hand">Sanae</figcaption>
+        </figure>
+        <p class="teacher-role">Japanese Teacher</p>
+        <h3 class="teacher-name">早苗 <small>Sanae</small></h3>
+        <p class="teacher-comment">英検1級・元中学校英語教諭。つまずきポイントを熟知。保護者面談も安心してお任せを。</p>
+      </article>
+      <article class="teacher-card">
+        <figure class="polaroid teacher-photo">
+          <span class="washi wt" aria-hidden="true"></span>
+          <span class="teacher-flag">🇨🇦 CAN</span>
+          <img src="assets/teacher-emma.jpg" alt="ネイティブ講師 エマ先生" loading="lazy">
+          <figcaption class="teacher-hand">Emma</figcaption>
+        </figure>
+        <p class="teacher-role">Native Teacher</p>
+        <h3 class="teacher-name">Emma <small>エマ先生</small></h3>
+        <p class="teacher-comment">カナダ出身。歌とアートが得意。幼児クラスの人気者で、はじめての子もすぐ笑顔に。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 教室の雰囲気（ギャラリー） ============================ -->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Gallery</p>
+      <h2 class="sec-title">教室の<span class="marker">雰囲気</span></h2>
+      <p class="sec-lead">明るくてカラフルな教室で、毎日たくさんの「Hello!」が生まれています。</p>
+    </div>
+    <!-- TODO: 教室・レッスン・イベントの写真に差し替え（Instagram連携も可） -->
+    <div class="gallery-grid">
+      <figure class="gallery-item tall"><img src="assets/gallery-01.jpg" alt="レッスン風景" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="assets/gallery-02.jpg" alt="教室の様子" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="assets/gallery-03.jpg" alt="イベントの様子" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="assets/gallery-04.jpg" alt="ハロウィンイベント" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="assets/gallery-05.jpg" alt="発表会の様子" loading="lazy"></figure>
+      <figure class="gallery-item tall"><img src="assets/gallery-06.jpg" alt="教室の入口" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="assets/gallery-07.jpg" alt="クリスマス会" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="assets/gallery-08.jpg" alt="教材コーナー" loading="lazy"></figure>
+    </div>
+    <div class="gallery-cta">
+      <p>イベントや日々のレッスンは Instagram で発信中</p>
+      <!-- TODO: InstagramのURLへ差し替え -->
+      <a href="#" class="btn btn-outline">@bright_kids をフォロー</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 保護者・生徒の声 ============================ -->
+<section class="section voice" id="voice">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Voice</p>
+      <h2 class="sec-title">保護者・生徒の声</h2>
+      <p class="sec-lead">Googleクチコミ ★4.9（※サンプル）。たくさんの「通わせてよかった」が届いています。</p>
+    </div>
+    <!-- TODO: 実際のクチコミ・アンケートに差し替え -->
+    <div class="voice-grid">
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">人見知りだった娘が、今では家でも英語の歌を口ずさんでいます。先生たちが一人ひとりを本当によく見てくださって、安心して通わせられます。</p>
+        <p class="voice-author"><span class="voice-avatar" aria-hidden="true">M</span><span>年中の保護者・<b>Mさん</b></span></p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">英検5級に小4で合格できました！ 楽しく通っているだけなのに、ちゃんと結果が出るのがすごい。毎月のレポートで成長が見えるのも嬉しいです。</p>
+        <p class="voice-author"><span class="voice-avatar" aria-hidden="true">K</span><span>小4の保護者・<b>Kさん</b></span></p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">マイク先生のレッスンが大好きで、毎週「英語の日」を楽しみにしています。中学に上がっても、英語だけは自信を持って取り組めています。</p>
+        <p class="voice-author"><span class="voice-avatar" aria-hidden="true">S</span><span>中1・<b>Sくん</b></span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 料金 ============================ -->
+<section class="section price" id="price">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Price</p>
+      <h2 class="sec-title">料金のご案内</h2>
+      <p class="sec-lead">入会金・教材費もすべて明朗会計。追加費用の心配なく、安心して始められます。</p>
+    </div>
+    <!-- TODO: 料金はすべてサンプル。実際の料金体系に差し替え（価格非表示にも対応可） -->
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead>
+          <tr><th>コース</th><th>対象</th><th>レッスン</th><th>月謝（税込）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>キンダー<span class="pt-sub">Kindergarten</span></th>
+            <td>2〜6歳</td>
+            <td>週1回 / 45分</td>
+            <td><span class="pt-yen">¥7,700<small>/月</small></span></td>
+          </tr>
+          <tr>
+            <th>エレメンタリー<span class="pt-sub">Elementary</span></th>
+            <td>小1〜小6</td>
+            <td>週1回 / 60分</td>
+            <td><span class="pt-yen">¥8,800<small>/月</small></span></td>
+          </tr>
+          <tr>
+            <th>ジュニアハイ<span class="pt-sub">Junior High</span></th>
+            <td>中1〜中3</td>
+            <td>週1回 / 60分</td>
+            <td><span class="pt-yen">¥9,900<small>/月</small></span></td>
+          </tr>
+          <tr>
+            <th>週2回プラン<span class="pt-sub">全コース対象</span></th>
+            <td>ご相談ください</td>
+            <td>週2回</td>
+            <td><span class="pt-yen">+¥6,600<small>/月</small></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="price-extra">
+      <div class="price-extra-card">
+        <h4><svg class="pe-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg> 入会金</h4>
+        <p>初回のみ <span class="pe-yen">¥11,000</span>（税込）。<br>※ 兄弟姉妹のご入会は入会金<b>無料</b>。</p>
+      </div>
+      <div class="price-extra-card">
+        <h4><svg class="pe-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4z"/><path d="M20 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z"/></svg> 教材費</h4>
+        <p>年間 <span class="pe-yen">¥8,800</span>（税込）。<br>テキスト・ワーク・オンライン教材を含みます。</p>
+      </div>
+    </div>
+    <p class="price-note">※ 料金はすべてサンプルです。月謝制／チケット制など、教室の実態に合わせて差し替えます。価格を非表示にする構成にも対応可能です。</p>
+  </div>
+</section>
+
+<!-- ============================ 無料体験 CTA ============================ -->
+<section class="section trial" id="trial">
+  <svg class="doodle dl-star s3" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6l11 30 32 1-25 20 9 31-27-19-27 19 9-31-25-20 32-1z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div class="container trial-inner">
+    <p class="trial-eyebrow"><span aria-hidden="true">✦</span> Free Trial Lesson</p>
+    <h2 class="trial-title">まずは、<span class="free">無料体験レッスン</span>へ。<br>お子さまの「好き」に出会う日。</h2>
+    <p class="trial-sub">
+      「うちの子に合うかな？」——その不安、体験でスッキリ解消できます。
+      実際のクラスに参加して、教室の雰囲気・先生・お子さまの反応を確かめてください。<br>
+      しつこい勧誘は一切ありません。
+    </p>
+    <div class="trial-steps">
+      <span class="trial-step"><span class="ts-no">1</span>フォーム or 電話で申込</span>
+      <span class="trial-arrow" aria-hidden="true">▶</span>
+      <span class="trial-step"><span class="ts-no">2</span>日程を調整</span>
+      <span class="trial-arrow" aria-hidden="true">▶</span>
+      <span class="trial-step"><span class="ts-no">3</span>体験レッスンに参加！</span>
+    </div>
+    <div class="trial-actions">
+      <!-- TODO: 申込フォームURL・LINE URL・電話番号を差し替え -->
+      <a href="#" class="btn btn-ghost-light btn-lg">無料体験を申し込む</a>
+      <a href="#" class="btn btn-line btn-lg">LINEで相談・予約</a>
+    </div>
+    <p class="trial-tel">
+      お電話でのお申込み・お問い合わせ
+      <b>0562-00-0000</b>
+      <span>受付 10:00 - 20:00 ／ 火〜土</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============================ アクセス ============================ -->
+<section class="section access" id="access">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Access</p>
+      <h2 class="sec-title">教室情報・アクセス</h2>
+    </div>
+    <div class="access-inner">
+      <div class="access-map">
+        <!-- TODO: Googleマップ埋め込み（iframe）に差し替え -->
+        <div class="ph" role="img" aria-label="Google マップが入ります">
+          <svg class="ph-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="ph-text">Google Map</span>
+        </div>
+      </div>
+      <div class="access-info">
+        <!-- TODO: 教室情報を実情報へ差し替え -->
+        <table class="access-table">
+          <tbody>
+            <tr><th>教室名</th><td>BRIGHT こども英会話</td></tr>
+            <tr><th>住所</th><td>〒470-1100<br>愛知県豊明市三崎町0-0 ◯◯ビル2F</td></tr>
+            <tr><th>電話</th><td><a href="tel:0562000000">0562-00-0000</a></td></tr>
+            <tr><th>受付時間</th><td>10:00〜20:00<br>（レッスンのない時間帯は留守電対応）</td></tr>
+            <tr><th>定休日</th><td>日曜・月曜・祝日</td></tr>
+            <tr><th>アクセス</th><td>名鉄名古屋本線「前後駅」徒歩4分／駐車場 5台完備</td></tr>
+          </tbody>
+        </table>
+        <div class="access-actions">
+          <a href="tel:0562000000" class="btn btn-outline">電話する</a>
+          <a href="#trial" class="btn btn-primary">無料体験を申し込む</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ よくある質問（FAQ） ============================ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">FAQ</p>
+      <h2 class="sec-title">よくあるご質問</h2>
+      <p class="sec-lead">はじめての習い事は、わからないことだらけ。よくいただくご質問にお答えします。</p>
+    </div>
+    <!-- TODO: 実際のFAQに差し替え -->
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-mark">Q</span><span>英語がまったく初めてでも大丈夫ですか？</span><span class="faq-plus" aria-hidden="true"></span></summary>
+        <div class="faq-a">もちろん大丈夫です。在籍生のほとんどが「はじめて」からのスタートです。年齢とレベルに合わせたクラス分けで、一人ひとりのペースに寄り添います。まずは無料体験で雰囲気を確かめてください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-mark">Q</span><span>何歳から通えますか？</span><span class="faq-plus" aria-hidden="true"></span></summary>
+        <div class="faq-a">2歳（親子クラス）からご参加いただけます。「耳」がやわらかい幼児期のスタートはとてもおすすめですが、小学生・中学生からでも遅すぎることはありません。目標に合わせたクラスをご案内します。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-mark">Q</span><span>送り迎えや待ち時間の対応はありますか？</span><span class="faq-plus" aria-hidden="true"></span></summary>
+        <div class="faq-a">教室前に駐車場を5台完備しています。レッスン中は保護者控えスペースもございますので、待ち時間もごゆっくりお過ごしいただけます。きょうだいの同伴も歓迎です。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-mark">Q</span><span>欠席したときの振替はできますか？</span><span class="faq-plus" aria-hidden="true"></span></summary>
+        <div class="faq-a">体調不良やご家庭のご都合での欠席は、別日のクラスへ振替が可能です（月◯回まで）。急なお休みもLINEで気軽にご連絡いただけます。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-mark">Q</span><span>英検対策もしてもらえますか？</span><span class="faq-plus" aria-hidden="true"></span></summary>
+        <div class="faq-a">はい。小学生クラスから英検対策に対応しており、教室は英検準会場にもなっています。普段の通学先で受験できるので、お子さまの負担も少なく安心です。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ フッター ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="fbrand">
+          <span class="brand-logo" aria-hidden="true">B</span>
+          <span class="brand-text">
+            <span class="brand-en">BRIGHT</span>
+            <span class="brand-jp">こども英会話 ・ 豊明市</span>
+          </span>
+        </span>
+        <p class="faddr">〒470-1100 愛知県豊明市三崎町0-0 ◯◯ビル2F<br>TEL 0562-00-0000 / 受付 10:00-20:00（火〜土）</p>
+        <div class="footer-sns">
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+          <a href="#">Google Map</a>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="#feature">特徴</a>
+        <a href="#course">コース</a>
+        <a href="#teacher">講師</a>
+        <a href="#voice">生徒の声</a>
+        <a href="#price">料金</a>
+        <a href="#access">アクセス</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#trial">無料体験</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year">2026</span> BRIGHT こども英会話. ※これはこども英会話教室・スクール業種のサンプルサイトです。</p>
+      <p class="footer-credit">業種別テンプレート（教室・スクール）／ produced by <a href="#">Web Production</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  if (location.search.includes('still')) document.documentElement.classList.add('no-anim');
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // スクロールイン（セクション単位）
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section').forEach((el) => { el.classList.add('reveal'); io.observe(el); });
+
+  // カード群を順番に出す（stagger）
+  document.querySelectorAll('.feature-grid, .course-grid, .teacher-grid, .voice-grid, .gallery-grid').forEach((grid) => {
+    [...grid.children].forEach((c, i) => { c.style.setProperty('--d', (i * 0.08) + 's'); c.classList.add('stagger'); });
+  });
+
+  // ヘッダー：スクロールで影
+  const header = document.querySelector('.site-header');
+  addEventListener('scroll', () => { header.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
+
+  // ヒーロー写真のパララックス（登場アニメ後に作動／no-anim時は無効）
+  setTimeout(() => {
+    const hv = document.querySelector('.hero-visual');
+    if (hv && !document.documentElement.classList.contains('no-anim')) {
+      addEventListener('scroll', () => {
+        const y = Math.max(0, Math.min(scrollY, innerHeight));
+        hv.style.transform = 'translate3d(0,' + (y * 0.04).toFixed(1) + 'px,0)';
+      }, { passive: true });
+    }
+  }, 1700);
+</script>
+</body>
+</html>

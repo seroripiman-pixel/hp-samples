@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- =========================================================
+     業種別テンプレート（サンプル）｜税理士・会計事務所（士業）
+     Web Production / templates/tax-office
+     ※事務所名・写真・料金・住所・電話・代表者名・口コミはすべてダミー。
+       <!- - TODO - -> マーカー箇所を実情報へ差し替えて納品。
+     設計：①受け皿（信頼の器）②24時間営業マン（無料相談・問い合わせ導線）
+          ③ローカルSEO基本（地域＋業種キーワード・JSON-LD）
+     ========================================================= -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- TODO: 地域名・事務所名を実情報へ（ローカルSEOの要） -->
+<title>豊明市の税理士・会計事務所｜豊明総合会計事務所【初回相談無料】</title>
+<meta name="description" content="愛知県豊明市の税理士・会計事務所「豊明総合会計事務所」。中小企業・個人事業主・創業者の税務顧問、確定申告、会社設立・創業支援、相続・事業承継をサポート。初めての方も安心、初回相談無料。お気軽にご相談ください。">
+<meta name="keywords" content="豊明市,税理士,会計事務所,確定申告,税務顧問,会社設立,創業支援,相続,事業承継,記帳代行,愛知県">
+<meta property="og:type" content="website">
+<meta property="og:title" content="豊明市の税理士・会計事務所｜豊明総合会計事務所">
+<meta property="og:description" content="愛知県豊明市の税理士・会計事務所。中小企業・個人事業主・創業者の身近なパートナー。税務顧問・確定申告・会社設立・相続。初回相談無料。">
+<meta property="og:image" content="assets/ogp.jpg">
+<meta name="theme-color" content="#1f3a5f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- ローカルSEO：構造化データ（TODO: 実住所・電話・URL・営業時間・代表者名へ差し替え） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "豊明総合会計事務所",
+  "description": "愛知県豊明市の税理士・会計事務所。中小企業・個人事業主・創業者の税務顧問、確定申告、会社設立・創業支援、相続・事業承継をサポート。",
+  "image": "assets/ogp.jpg",
+  "url": "https://example.com/",
+  "address": { "@type": "PostalAddress", "postalCode": "470-1100", "addressRegion": "愛知県", "addressLocality": "豊明市", "streetAddress": "新栄町0-0" },
+  "telephone": "+81-562-00-0000",
+  "email": "info@example.com",
+  "priceRange": "¥¥",
+  "areaServed": ["豊明市", "刈谷市", "大府市", "名古屋市緑区", "東郷町", "みよし市"],
+  "founder": { "@type": "Person", "name": "豊明 太郎", "jobTitle": "代表税理士" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============================ ヘッダー ============================ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="brand">
+      <!-- TODO: ロゴ画像に差し替え可（暫定はSVGの建物アイコン） -->
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 21h16"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/><path d="M9 11h.01M15 11h.01"/></svg>
+      </span>
+      <span class="brand-text">
+        <!-- TODO: 事務所名差し替え -->
+        <span class="brand-jp">豊明総合会計事務所</span>
+        <span class="brand-en">TOYOAKE ACCOUNTING</span>
+      </span>
+    </a>
+    <nav class="gnav">
+      <ul class="gnav-list">
+        <li><a href="#worries">お悩み</a></li>
+        <li><a href="#services">サービス</a></li>
+        <li><a href="#concept">事務所紹介</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#reasons">選ばれる理由</a></li>
+        <li><a href="#access">事務所概要</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <!-- TODO: 電話番号差し替え -->
+      <a href="tel:0562000000" class="header-tel">
+        <span class="htel-num">0562-00-0000</span>
+        <span class="htel-label">平日 9:00 - 18:00</span>
+      </a>
+      <a href="#reserve" class="btn btn-primary header-cta">無料相談</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ ヒーロー（信頼の整然エディトリアル） ============================ -->
+<section class="hero">
+  <span class="hero-bg" aria-hidden="true">信頼</span>
+  <div class="container hero-inner">
+    <p class="hero-eyebrow">
+      <span class="he-idx">01</span>
+      <span class="he-jp">愛知県豊明市の税理士・会計事務所</span>
+      <span class="he-en">CERTIFIED TAX ACCOUNTANT ｜ TOYOAKE</span>
+    </p>
+    <h1 class="hero-title">税金の不安を、<br><span class="em">安心</span>に。</h1>
+    <div class="hero-lead">
+      <p class="hero-sub">
+        「何から相談すればいいか分からない」——そんな方こそ、お気軽に。
+        豊明の地で、経営者一人ひとりに寄り添う税理士事務所です。
+        専門用語は使わず、数字の先にある「経営」を一緒に考えます。
+      </p>
+      <div class="hero-actions">
+        <a href="#reserve" class="btn btn-primary btn-lg">初回相談を予約する（無料）</a>
+        <a href="#services" class="btn btn-outline btn-lg">サービスを見る</a>
+      </div>
+    </div>
+  </div>
+  <!-- 抑えた全幅バンド：唯一の"画"。ネイビー薄オーバーレイで端正に -->
+  <div class="hero-band">
+    <!-- TODO: 事務所外観・代表・面談風景などの写真に差し替え -->
+    <img src="assets/hero-office.jpg" alt="落ち着いた会計事務所の面談スペース・事務所の様子" loading="lazy">
+    <div class="container hero-band-cap">
+      <span class="hbc-line" aria-hidden="true"></span>
+      <p class="hbc-text">中小企業 ・ 個人事業主 ・ 創業者の、身近なパートナー。</p>
+    </div>
+  </div>
+  <!-- 数字で見る：既存コピーの数値を端正に大きく -->
+  <div class="hero-stats">
+    <div class="container hero-stats-grid">
+      <div class="hstat">
+        <span class="hstat-label">Since</span>
+        <span class="hstat-num">2008</span>
+        <span class="hstat-cap">豊明で歩んで15年</span>
+      </div>
+      <div class="hstat">
+        <span class="hstat-label">顧問先</span>
+        <span class="hstat-num">200<small>社超</small></span>
+        <span class="hstat-cap">地域の経営を支える</span>
+      </div>
+      <div class="hstat">
+        <span class="hstat-label">初回相談</span>
+        <span class="hstat-num">0<small>円</small></span>
+        <span class="hstat-cap">お見積りも無料</span>
+      </div>
+      <div class="hstat">
+        <span class="hstat-label">創業支援</span>
+        <span class="hstat-num">多数<small>の実績</small></span>
+        <span class="hstat-cap">融資・補助金まで伴走</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ こんなお悩みありませんか ============================ -->
+<section class="section worries" id="worries">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Worries</p>
+      <h2 class="sec-title">こんなお悩み、<br>ありませんか？</h2>
+      <p class="sec-lead">税金や経理のことは、つい後回しになりがち。<br>でも、早めのご相談が、いちばんの節税・安心につながります。</p>
+    </div>
+    <!-- TODO: お悩み項目は業種・ターゲットに合わせて差し替え可 -->
+    <div class="worries-grid">
+      <div class="worry-card">
+        <div class="worry-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <p class="worry-text"><span class="q">確定申告</span>が毎年ギリギリ。本業が忙しくて、領収書の山に手がつけられない。</p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <p class="worry-text">今の税理士さんに<span class="q">何でも相談</span>しづらい。もっと親身に話を聞いてほしい。</p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <p class="worry-text">これから<span class="q">起業・会社設立</span>したいけど、お金や手続きのことが何も分からない。</p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <p class="worry-text">ちゃんと<span class="q">節税</span>できているのか不安。もっと手元にお金を残す方法を知りたい。</p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <p class="worry-text"><span class="q">融資・補助金</span>を受けたいが、事業計画書や決算書の作り方が分からない。</p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <p class="worry-text"><span class="q">相続・事業承継</span>がそろそろ心配。何から準備すればいいのか見当もつかない。</p>
+      </div>
+    </div>
+    <div class="worries-bridge">
+      <p>その<span class="em">「分からない」「不安」</span>、<br>まるごとお任せください。</p>
+      <p class="wb-sub">一つでも当てはまったら、まずは無料相談で気軽にお話を。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ サービス（対応業務） ============================ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Services</p>
+      <h2 class="sec-title">サービス・対応業務</h2>
+      <p class="sec-lead">記帳代行から経営の相談まで、お金まわりはまるごとサポート。<br>事業の規模・段階に合わせて、必要なところだけのご依頼も歓迎です。</p>
+    </div>
+    <!-- TODO: 取扱い業務・対応内容を事務所の実態へ差し替え -->
+    <div class="services-grid">
+      <article class="service-card">
+        <span class="service-num">01</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M9 3h9a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7z"/><path d="M9 3v4H5"/><path d="M8 12h7M8 15.5h7M8 9h3"/></svg>
+        </div>
+        <h3 class="service-name">税務顧問・記帳代行<small>TAX ADVISORY</small></h3>
+        <p class="service-text">毎月の記帳・試算表のチェックから、節税のご提案、決算・申告まで。経営者の「もう一人の右腕」として、数字の面から事業を支えます。クラウド会計の導入支援も。</p>
+        <div class="service-tags"><span>月次顧問</span><span>記帳代行</span><span>決算・申告</span><span>節税相談</span></div>
+      </article>
+      <article class="service-card">
+        <span class="service-num">02</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M7 3h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M9 7h6M9 10h6"/><rect x="9" y="13" width="2.2" height="2.2"/><rect x="13" y="13" width="2.2" height="2.2"/><rect x="9" y="16.5" width="2.2" height="2.2"/></svg>
+        </div>
+        <h3 class="service-name">確定申告・個人事業<small>TAX RETURN</small></h3>
+        <p class="service-text">個人事業主・フリーランス・副業の方の確定申告を、まるごと代行。インボイス・消費税の対応もおまかせ。「何が経費になる？」といった素朴な疑問にも丁寧にお答えします。</p>
+        <div class="service-tags"><span>確定申告</span><span>青色申告</span><span>インボイス</span><span>消費税</span></div>
+      </article>
+      <article class="service-card">
+        <span class="service-num">03</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3v3"/><path d="M5.5 6.5 7.6 8.6"/><path d="M18.5 6.5 16.4 8.6"/><path d="M12 21a6 6 0 0 0 6-6c0-3-2-4.5-2-7H8c0 2.5-2 4-2 7a6 6 0 0 0 6 6z"/><path d="M10 21h4"/></svg>
+        </div>
+        <h3 class="service-name">会社設立・創業支援<small>START-UP</small></h3>
+        <p class="service-text">これから起業する方を、設立手続きから資金調達まで一貫サポート。融資（日本政策金融公庫など）・補助金の事業計画づくりもお手伝い。失敗しないスタートを、隣で伴走します。</p>
+        <div class="service-tags"><span>会社設立</span><span>創業融資</span><span>補助金</span><span>事業計画</span></div>
+      </article>
+      <article class="service-card">
+        <span class="service-num">04</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12h6M12 9v6"/></svg>
+        </div>
+        <h3 class="service-name">相続・事業承継<small>INHERITANCE</small></h3>
+        <p class="service-text">相続税の申告・生前対策から、ご家族・後継者への円満な事業承継まで。「争続（あらそうぞく）」にしないために、早めの準備を税理士がトータルでサポートします。初回のご相談は無料です。</p>
+        <div class="service-tags"><span>相続税申告</span><span>生前対策</span><span>事業承継</span><span>株価対策</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 事務所紹介・代表ごあいさつ ============================ -->
+<section class="section concept" id="concept">
+  <div class="container concept-inner">
+    <div class="concept-visual">
+      <!-- TODO: 代表税理士の人物写真・事務所内観などに差し替え -->
+      <img src="assets/director.jpg" alt="穏やかな表情で相談に応じる代表税理士" loading="lazy">
+    </div>
+    <div class="concept-body">
+      <div class="section-head">
+        <p class="sec-eyebrow">Message</p>
+        <h2 class="sec-title">数字の先にある、<br>あなたの「経営」を。</h2>
+      </div>
+      <p><span class="lead-em">税理士は、申告書を作るだけの人ではありません。</span></p>
+      <p>
+        豊明総合会計事務所は、豊明の地で15年、地域の中小企業・個人事業主の
+        みなさまと歩んでまいりました。私たちが大切にしているのは、
+        ただ正確に税務を処理することではなく、その数字の先にある
+        「経営をよくする」「夢をかたちにする」お手伝いをすること。
+      </p>
+      <p>
+        だからこそ、難しい専門用語は使いません。経営者と同じ目線で、
+        わからないことは何でも聞ける、気軽に相談できる存在でありたい。
+        「この事務所に頼んでよかった」——そう言っていただける関係を、
+        一社一社、丁寧に築いてまいります。
+      </p>
+      <p class="concept-sign">
+        <span class="cs-role">代表税理士</span>
+        <span class="cs-name">豊明 太郎</span>
+        <small>※サンプル。代表者名・肩書・経歴は差し替え可</small>
+      </p>
+      <!-- TODO: 保有資格・登録番号・所属を実情報へ差し替え -->
+      <div class="concept-creds">
+        <span>税理士登録番号 第00000号</span>
+        <span>東海税理士会 所属</span>
+        <span>認定経営革新等支援機関</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 流れる帯（マーキー） ============================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>豊明総合会計事務所</span><span class="marquee-dot">✦</span><span>税務顧問</span><span class="marquee-dot">✦</span><span>確定申告</span><span class="marquee-dot">✦</span><span>会社設立・創業支援</span><span class="marquee-dot">✦</span><span>相続・事業承継</span><span class="marquee-dot">✦</span><span>初回相談無料</span><span class="marquee-dot">✦</span>
+    <span>豊明総合会計事務所</span><span class="marquee-dot">✦</span><span>税務顧問</span><span class="marquee-dot">✦</span><span>確定申告</span><span class="marquee-dot">✦</span><span>会社設立・創業支援</span><span class="marquee-dot">✦</span><span>相続・事業承継</span><span class="marquee-dot">✦</span><span>初回相談無料</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ============================ 料金 ============================ -->
+<section class="section price" id="price">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Price</p>
+      <h2 class="sec-title">明朗な料金プラン</h2>
+      <p class="sec-lead">「いくらかかるか分からない」を、なくします。<br>事業の規模に合わせた分かりやすい料金で、追加費用は事前に必ずご説明します。</p>
+    </div>
+    <!-- TODO: 料金はサンプル。実際の顧問料・プラン内容に差し替え（価格非表示にも対応可） -->
+    <div class="price-grid">
+      <div class="price-card">
+        <p class="price-name">スポット申告プラン</p>
+        <p class="price-target">個人事業主・フリーランス向け</p>
+        <p class="price-amount"><span class="yen">¥</span><span class="num">55,000</span></p>
+        <p class="price-unit">／ 確定申告 1回（税込）〜</p>
+        <ul class="price-list">
+          <li>確定申告書の作成・提出</li>
+          <li>青色申告決算書の作成</li>
+          <li>消費税・インボイス対応</li>
+          <li>節税のワンポイントアドバイス</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <span class="price-badge">いちばん人気</span>
+        <p class="price-name">月次顧問プラン</p>
+        <p class="price-target">中小企業・法人向け</p>
+        <p class="price-amount"><span class="yen">¥</span><span class="num">22,000</span></p>
+        <p class="price-unit">／ 月（税込）〜 ＋ 決算料</p>
+        <ul class="price-list">
+          <li>毎月の記帳チェック・試算表</li>
+          <li>決算・法人税申告</li>
+          <li>節税・資金繰りのご相談</li>
+          <li>クラウド会計の導入支援</li>
+          <li>電話・メール相談 何度でも無料</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <p class="price-name">創業支援プラン</p>
+        <p class="price-target">これから起業する方向け</p>
+        <p class="price-amount"><span class="yen">¥</span><span class="num">110,000</span></p>
+        <p class="price-unit">／ 一式（税込）〜</p>
+        <ul class="price-list">
+          <li>会社設立手続きのサポート</li>
+          <li>創業融資の事業計画作成支援</li>
+          <li>補助金・助成金のご案内</li>
+          <li>設立後3ヶ月の経理サポート</li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-note">
+      ※ 上記はすべて<b>サンプル料金</b>です。実際の料金・プラン内容に差し替えてご納品します。<br>
+      売上規模・記帳量・訪問頻度により変動します。お見積りは無料、しつこい営業は一切いたしません。
+    </p>
+  </div>
+</section>
+
+<!-- ============================ 選ばれる理由 ============================ -->
+<section class="section reasons" id="reasons">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Reasons</p>
+      <h2 class="sec-title">選ばれる5つの理由</h2>
+      <p class="sec-lead">数ある税理士事務所の中から、豊明総合会計事務所が選ばれているわけ。</p>
+    </div>
+    <!-- TODO: 自事務所の強みに合わせて理由を差し替え -->
+    <div class="reasons-list">
+      <article class="reason-item">
+        <div class="reason-num"><span class="rn-label">REASON</span><span class="rn-no">1</span></div>
+        <div class="reason-body">
+          <h3>専門用語を使わない、<span class="accent">分かりやすい説明</span></h3>
+          <p>「先生の話が難しくて…」を、なくします。経営者と同じ言葉で、図や具体例を交えながら、納得いただけるまで丁寧にご説明します。質問は何度でも歓迎です。</p>
+        </div>
+      </article>
+      <article class="reason-item">
+        <div class="reason-num"><span class="rn-label">REASON</span><span class="rn-no">2</span></div>
+        <div class="reason-body">
+          <h3>レスポンスが早い、<span class="accent">何でも相談できる</span></h3>
+          <p>「こんなこと聞いていいのかな」も大丈夫。電話・メール・チャットでお気軽に。顧問のお客様からのご相談には、原則として当日〜翌営業日にお返事します。</p>
+        </div>
+      </article>
+      <article class="reason-item">
+        <div class="reason-num"><span class="rn-label">REASON</span><span class="rn-no">3</span></div>
+        <div class="reason-body">
+          <h3>節税だけでなく、<span class="accent">経営のアドバイス</span>まで</h3>
+          <p>税金を減らすことだけが目的ではありません。資金繰り、利益計画、融資、事業の将来まで。数字を経営に活かす視点で、社長の意思決定を後押しします。</p>
+        </div>
+      </article>
+      <article class="reason-item">
+        <div class="reason-num"><span class="rn-label">REASON</span><span class="rn-no">4</span></div>
+        <div class="reason-body">
+          <h3>クラウド会計に強い、<span class="accent">経理がラクになる</span></h3>
+          <p>freee・マネーフォワード等のクラウド会計の導入から運用まで支援。面倒な経理業務を効率化し、社長が本業に集中できる仕組みづくりをサポートします。</p>
+        </div>
+      </article>
+      <article class="reason-item">
+        <div class="reason-num"><span class="rn-label">REASON</span><span class="rn-no">5</span></div>
+        <div class="reason-body">
+          <h3>豊明・地元密着、<span class="accent">顔の見える安心感</span></h3>
+          <p>地域に根ざして15年。豊明市・刈谷市・大府市・名古屋市緑区を中心に、いつでも会いに行ける距離で、地元の事情を踏まえた身近なサポートをお約束します。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ お客様の声 ============================ -->
+<section class="section voice">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Voice</p>
+      <h2 class="sec-title">お客様の声</h2>
+      <p class="sec-lead">Googleクチコミ ★4.9（※サンプル）。顧問先のみなさまから、うれしい言葉。</p>
+    </div>
+    <!-- TODO: 実際のお客様の声・アンケートに差し替え（Googleクチコミ連携が効果的） -->
+    <div class="voice-grid">
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">起業前で右も左も分からない私に、融資の事業計画から本当に親身にのってくださいました。おかげで希望どおりの創業融資が通り、安心してスタートできました。</p>
+        <p class="voice-author"><b>飲食業・40代</b>会社設立・創業融資</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">前の税理士さんは年1回会うだけでしたが、こちらは毎月きちんと数字を見て、節税も提案してくれます。質問にもすぐ答えてくれて、経営の心強い味方です。</p>
+        <p class="voice-author"><b>建設業・法人</b>月次顧問契約</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">確定申告がいつも憂うつでしたが、丸ごとお任せできて本当に助かっています。「これは経費になりますよ」と教えてもらえて、想像より税金も抑えられました。</p>
+        <p class="voice-author"><b>フリーランス・30代</b>確定申告</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 無料相談 CTA ============================ -->
+<section class="section reserve" id="reserve">
+  <div class="container reserve-inner">
+    <p class="reserve-eyebrow">Free Consultation</p>
+    <h2 class="reserve-title">まずは、初回無料相談から。</h2>
+    <p class="reserve-sub">
+      「こんなこと相談していいのかな」——どうぞ、ご遠慮なく。
+      税務・会計・経営のお悩みを、経験豊富な税理士がじっくりお伺いします。
+      無理な勧誘は一切いたしません。<br>
+      ご相談はオンライン（Zoom）でも、ご来所でも承ります。
+    </p>
+    <div class="reserve-actions">
+      <!-- TODO: 予約フォームURL・メールアドレス・LINE URLを差し替え -->
+      <a href="#" class="btn btn-ghost-light btn-lg">相談予約フォーム</a>
+      <a href="mailto:info@example.com" class="btn btn-ghost-light btn-lg">メールで相談</a>
+      <a href="#" class="btn btn-line btn-lg">LINEで相談</a>
+    </div>
+    <div class="reserve-tel">
+      <span class="rt-label">お電話でのご相談・ご予約はこちら</span>
+      <!-- TODO: 電話番号差し替え -->
+      <a href="tel:0562000000" class="rt-num">0562-00-0000</a>
+      <span class="rt-hours">受付時間 平日 9:00〜18:00（土日祝休）</span>
+    </div>
+    <p class="reserve-note">＼ 初めての方も安心。初回のご相談は無料、お見積りも無料です ／</p>
+  </div>
+</section>
+
+<!-- ============================ 事務所概要・アクセス ============================ -->
+<section class="section access" id="access">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Access</p>
+      <h2 class="sec-title">事務所概要・アクセス</h2>
+    </div>
+    <div class="access-inner">
+      <div class="access-map">
+        <!-- TODO: Googleマップ埋め込み（iframe）に差し替え -->
+        <div class="ph" role="img" aria-label="Google マップが入ります">
+          <svg class="ph-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="ph-text">Google Map</span>
+        </div>
+      </div>
+      <div class="access-info">
+        <!-- TODO: 事務所情報を実情報へ差し替え -->
+        <table class="access-table">
+          <tbody>
+            <tr><th>事務所名</th><td>豊明総合会計事務所</td></tr>
+            <tr><th>代表者</th><td>代表税理士　豊明 太郎</td></tr>
+            <tr><th>所在地</th><td>〒470-1100<br>愛知県豊明市新栄町0-0　◯◯ビル3F</td></tr>
+            <tr><th>電話</th><td><a href="tel:0562000000">0562-00-0000</a></td></tr>
+            <tr><th>FAX</th><td>0562-00-0001</td></tr>
+            <tr><th>メール</th><td>info@example.com</td></tr>
+            <tr><th>営業時間</th><td>平日 9:00〜18:00（時間外・休日は事前予約で対応可）</td></tr>
+            <tr><th>定休日</th><td>土曜・日曜・祝日</td></tr>
+            <tr><th>業務内容</th><td>税務顧問・記帳代行・確定申告・会社設立・創業/融資支援・相続/事業承継</td></tr>
+            <tr><th>対応エリア</th><td>豊明市・刈谷市・大府市・名古屋市緑区・東郷町・みよし市 ほか</td></tr>
+            <tr><th>アクセス</th><td>名鉄名古屋本線「前後駅」より徒歩7分／駐車場 5台完備</td></tr>
+          </tbody>
+        </table>
+        <div class="access-actions">
+          <a href="tel:0562000000" class="btn btn-outline">電話する</a>
+          <a href="#reserve" class="btn btn-primary">無料相談を予約</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ フッター ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-jp">豊明総合会計事務所</span>
+        <span class="brand-en">TOYOAKE ACCOUNTING</span>
+        <!-- TODO: 事務所情報を実情報へ差し替え -->
+        <p class="faddr">〒470-1100 愛知県豊明市新栄町0-0 ◯◯ビル3F<br>TEL 0562-00-0000 / FAX 0562-00-0001<br>平日 9:00-18:00（土日祝休）／ 税理士登録番号 第00000号 ※サンプル</p>
+        <div class="footer-sns">
+          <a href="#">Google Map</a>
+          <a href="#">LINE</a>
+          <a href="mailto:info@example.com">Mail</a>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="#worries">お悩み</a>
+        <a href="#services">サービス</a>
+        <a href="#concept">事務所紹介</a>
+        <a href="#price">料金</a>
+        <a href="#reasons">選ばれる理由</a>
+        <a href="#access">事務所概要</a>
+        <a href="#reserve">無料相談</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year">2026</span> 豊明総合会計事務所. ※これは税理士・会計事務所（士業）のサンプルサイトです。</p>
+      <p class="footer-credit">業種別テンプレート（士業）／ produced by <a href="#">Web Production</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  if (location.search.includes('still')) document.documentElement.classList.add('no-anim');
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // スクロールイン（セクション単位）
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section').forEach((el) => { el.classList.add('reveal'); io.observe(el); });
+
+  // カード群を順番に出す（stagger）
+  document.querySelectorAll('.worries-grid, .services-grid, .price-grid, .reasons-list, .voice-grid').forEach((grid) => {
+    [...grid.children].forEach((c, i) => { c.style.setProperty('--d', (i * 0.08) + 's'); c.classList.add('stagger'); });
+  });
+
+  // ヘッダー：スクロールで影
+  const header = document.querySelector('.site-header');
+  addEventListener('scroll', () => { header.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
+
+  // ヒーロー画像のパララックス（登場アニメ後に作動／no-anim時は無効）
+  setTimeout(() => {
+    const hv = document.querySelector('.hero-visual');
+    if (hv && !document.documentElement.classList.contains('no-anim')) {
+      addEventListener('scroll', () => {
+        const y = Math.max(0, Math.min(scrollY, innerHeight));
+        hv.style.transform = 'translate3d(0,' + (y * 0.05).toFixed(1) + 'px,0)';
+      }, { passive: true });
+    }
+  }, 1700);
+</script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- =========================================================
+     業種別テンプレート（サンプル）｜飲食店・カフェ＆ビストロ
+     Web Production / templates/restaurant
+     ※店名・写真・料金・住所・電話・口コミはすべてダミー。
+       <!- - TODO - -> マーカー箇所を実情報へ差し替えて納品。
+     設計：①受け皿（信頼の器）②24時間営業マン（予約導線）
+          ③ローカルSEO基本（地域＋業種キーワード・JSON-LD）
+     配色：テラコッタ × クリーム × オリーブ × ダークブラウン × ゴールド
+     写真は style.css のプレースホルダ（.ph）方式。
+     ========================================================= -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- TODO: 地域名・店名を実情報へ（ローカルSEOの要） -->
+<title>豊明市のカフェ＆ビストロ｜Bistro &amp; Cafe 木洩日（こもれび）</title>
+<meta name="description" content="愛知県豊明市のカフェ＆ビストロ「Bistro &amp; Cafe 木洩日（こもれび）」。ランチ・ディナー・自家焙煎カフェ。前後駅すぐ・駐車場あり、ネット予約・電話予約OK。木洩れ日の差すカジュアルな洋風ビストロ。">
+<meta name="keywords" content="豊明市,カフェ,ビストロ,ランチ,ディナー,洋食,カフェ飯,前後駅,デート,記念日,愛知県">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="豊明市のカフェ＆ビストロ｜Bistro &amp; Cafe 木洩日">
+<meta property="og:description" content="愛知県豊明市のカフェ＆ビストロ。木洩れ日の差すカジュアルな洋風ビストロ。ランチ・ディナー・自家焙煎カフェ。ネット予約・電話予約OK。">
+<meta property="og:site_name" content="Bistro &amp; Cafe 木洩日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- ローカルSEO：構造化データ（TODO: 実住所・電話・URL・営業時間・予算へ差し替え） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Bistro & Cafe 木洩日",
+  "description": "愛知県豊明市のカフェ＆ビストロ。ランチ・ディナー・自家焙煎カフェ。",
+  "servesCuisine": ["フレンチ", "イタリアン", "カフェ", "洋食"],
+  "image": "https://example.com/ogp.jpg",
+  "url": "https://example.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "470-1100",
+    "addressRegion": "愛知県",
+    "addressLocality": "豊明市",
+    "streetAddress": "栄町0-0"
+  },
+  "telephone": "+81-562-00-0000",
+  "priceRange": "¥¥",
+  "acceptsReservations": true,
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:00", "closes": "15:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:30", "closes": "22:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============================ ヘッダー ============================ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="brand">
+      <!-- TODO: 店名差し替え -->
+      <span class="brand-en">Komorebi</span>
+      <span class="brand-jp">BISTRO &amp; CAFE ・ 豊明市</span>
+    </a>
+    <nav class="gnav">
+      <ul class="gnav-list">
+        <li><a href="#concept">CONCEPT</a></li>
+        <li><a href="#menu">MENU</a></li>
+        <li><a href="#space">SPACE</a></li>
+        <li><a href="#voice">VOICE</a></li>
+        <li><a href="#access">ACCESS</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <!-- TODO: 電話番号差し替え -->
+      <a href="tel:0562000000" class="header-tel">
+        <span class="htel-num">0562-00-0000</span>
+        <span class="htel-label">11:00 - 22:00 / 火〜日</span>
+      </a>
+      <a href="#reserve" class="btn btn-primary header-reserve">ご予約</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ ヒーロー（全面シネマティック・CAFE LEXCEL系参照） ============================ -->
+<section class="hero hero-cine">
+  <div class="hero-media" aria-hidden="true">
+    <!-- TODO: メインビジュアルは店内/料理の一番の写真へ -->
+    <img src="assets/interior.jpg" alt="">
+    <span class="hero-scrim"></span>
+  </div>
+  <span class="hero-bg" aria-hidden="true">Komorebi</span>
+  <div class="container hero-content">
+    <p class="hero-eyebrow">Bistro &amp; Café in Toyoake
+      <span>愛知県豊明市・前後駅すぐ</span>
+    </p>
+    <h1 class="hero-title">木洩れ日の下で、<br><span class="em">ゆっくり</span>味わう<br>一皿。</h1>
+    <p class="hero-sub">
+      昼はカフェ、夜はビストロ。豊明の小さな洋食店で、
+      旬の食材とていねいな一皿を、肩肘張らずに。
+    </p>
+    <div class="hero-actions">
+      <a href="#reserve" class="btn btn-primary btn-lg">ネットで予約する</a>
+      <a href="#menu" class="btn btn-ghost-light btn-lg">メニューを見る</a>
+    </div>
+    <div class="hero-meta">
+      <span><b>★ 4.8</b> Google口コミ</span>
+      <span><b>ランチ</b> 11:00 - 15:00</span>
+      <span><b>ディナー</b> 17:30 - 22:00</span>
+      <span><b>定休</b> 月曜</span>
+    </div>
+  </div>
+  <span class="hero-scroll" aria-hidden="true">SCROLL</span>
+</section>
+
+<!-- ============================ コンセプト ============================ -->
+<section class="section concept" id="concept">
+  <div class="container concept-inner">
+    <div class="concept-visual">
+      <!-- TODO: コンセプトを伝える写真へ差し替え（料理・シェフ・店内など） -->
+      <img src="assets/concept.jpg" alt="旬の食材を生かした木洩日の洋食・コンセプトを伝える一皿" loading="lazy">
+    </div>
+    <div class="concept-body">
+      <div class="section-head">
+        <p class="sec-eyebrow">Concept</p>
+        <h2 class="sec-title">「いつもの一日」を、<br>少しだけ特別に。</h2>
+      </div>
+      <p><span class="lead-em">木洩れ日のように、やさしい時間を。</span></p>
+      <p>
+        木洩日（こもれび）は、昼はカフェ、夜はビストロ。
+        豊明の街で、旬の野菜と季節の食材を生かした洋食を、
+        気どらないカジュアルさでお出ししています。
+      </p>
+      <p>
+        派手さよりも、また来たくなる「ちょうどよさ」を。
+        広告に頼らず、検索とご紹介、そして口コミで
+        通ってくださる方に支えられてきました。
+      </p>
+      <p class="concept-sign">chef ─ 山田 涼介
+        <small>※サンプル。シェフ名は差し替え可</small>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ステートメント（全面パララックス） ============================ -->
+<section class="statement" aria-label="店からのひとこと">
+  <div class="container statement-inner">
+    <p class="statement-en">Seasonal &middot; Honest &middot; Unhurried</p>
+    <p class="statement-jp">旬を、ていねいに。<br>皿の上の、小さな贅沢を。</p>
+  </div>
+</section>
+
+<!-- ============================ 流れる帯（マーキー） ============================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>BISTRO &amp; CAFE KOMOREBI</span><span class="marquee-dot">✦</span><span>TOYOAKE</span><span class="marquee-dot">✦</span><span>LUNCH &amp; DINNER &amp; CAFE</span><span class="marquee-dot">✦</span><span>SINCE 2016</span><span class="marquee-dot">✦</span>
+    <span>BISTRO &amp; CAFE KOMOREBI</span><span class="marquee-dot">✦</span><span>TOYOAKE</span><span class="marquee-dot">✦</span><span>LUNCH &amp; DINNER &amp; CAFE</span><span class="marquee-dot">✦</span><span>SINCE 2016</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ============================ メニュー ============================ -->
+<section class="section menu" id="menu">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Menu &amp; Price</p>
+      <h2 class="sec-title">メニュー・料金</h2>
+      <p class="sec-lead">すべて税込価格。旬の食材で内容は月替わりです。<br>アレルギー・苦手な食材は、ご予約時にお気軽にご相談ください。</p>
+    </div>
+    <!-- TODO: 料金・品目はサンプル。実メニュー・価格へ差し替え（価格非表示にも対応可） -->
+    <div class="menu-grid">
+
+      <!-- ランチ -->
+      <div class="menu-card">
+        <div class="menu-card-photo">
+          <img src="assets/lunch.jpg" alt="木洩日のランチプレート" loading="lazy">
+        </div>
+        <div class="menu-card-inner">
+          <div class="menu-card-head"><span class="menu-cat">ランチ</span><span class="menu-cat-en">Lunch</span></div>
+          <ul class="menu-items">
+            <li class="menu-item"><span class="mi-name">本日の前菜とパスタランチ<small>スープ・サラダ・ドリンク付</small></span><span class="mi-dots"></span><span class="mi-price">¥1,480</span></li>
+            <li class="menu-item"><span class="mi-name">日替わり肉料理プレート<small>スープ・サラダ・パン付</small></span><span class="mi-dots"></span><span class="mi-price">¥1,680</span></li>
+            <li class="menu-item"><span class="mi-name">気まぐれ魚料理プレート</span><span class="mi-dots"></span><span class="mi-price">¥1,780</span></li>
+            <li class="menu-item"><span class="mi-name">木洩日スペシャルランチ<small>前菜・主菜・デザート</small></span><span class="mi-dots"></span><span class="mi-price">¥2,380</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ディナー -->
+      <div class="menu-card">
+        <div class="menu-card-photo">
+          <img src="assets/dinner.jpg" alt="木洩日のディナー・国産牛の赤ワイン煮込み" loading="lazy">
+        </div>
+        <div class="menu-card-inner">
+          <div class="menu-card-head"><span class="menu-cat">ディナー</span><span class="menu-cat-en">Dinner</span></div>
+          <ul class="menu-items">
+            <li class="menu-item"><span class="mi-name">本日の前菜盛り合わせ</span><span class="mi-dots"></span><span class="mi-price">¥1,320</span></li>
+            <li class="menu-item"><span class="mi-name">国産牛の赤ワイン煮込み</span><span class="mi-dots"></span><span class="mi-price">¥2,480</span></li>
+            <li class="menu-item"><span class="mi-name">季節野菜のオーブン焼き</span><span class="mi-dots"></span><span class="mi-price">¥1,180</span></li>
+            <li class="menu-item"><span class="mi-name">シェフおまかせコース<small>全6品</small></span><span class="mi-dots"></span><span class="mi-price">¥4,800<small>〜</small></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- カフェ -->
+      <div class="menu-card">
+        <div class="menu-card-photo">
+          <img src="assets/cafe.jpg" alt="木洩日のカフェ・スイーツメニュー" loading="lazy">
+        </div>
+        <div class="menu-card-inner">
+          <div class="menu-card-head"><span class="menu-cat">カフェ・スイーツ</span><span class="menu-cat-en">Cafe</span></div>
+          <ul class="menu-items">
+            <li class="menu-item"><span class="mi-name">本日のキッシュプレート<small>ミニサラダ付</small></span><span class="mi-dots"></span><span class="mi-price">¥1,080</span></li>
+            <li class="menu-item"><span class="mi-name">自家製ガトーショコラ</span><span class="mi-dots"></span><span class="mi-price">¥680</span></li>
+            <li class="menu-item"><span class="mi-name">季節のフルーツタルト</span><span class="mi-dots"></span><span class="mi-price">¥720</span></li>
+            <li class="menu-item"><span class="mi-name">ケーキセット<small>お好きなケーキ＋ドリンク</small></span><span class="mi-dots"></span><span class="mi-price">¥1,180</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ドリンク -->
+      <div class="menu-card">
+        <div class="menu-card-photo">
+          <img src="assets/drink.jpg" alt="木洩日の自家焙煎コーヒー・ドリンクメニュー" loading="lazy">
+        </div>
+        <div class="menu-card-inner">
+          <div class="menu-card-head"><span class="menu-cat">ドリンク</span><span class="menu-cat-en">Drink</span></div>
+          <ul class="menu-items">
+            <li class="menu-item"><span class="mi-name">自家焙煎ブレンドコーヒー</span><span class="mi-dots"></span><span class="mi-price">¥480</span></li>
+            <li class="menu-item"><span class="mi-name">カフェラテ<small>ホット / アイス</small></span><span class="mi-dots"></span><span class="mi-price">¥550</span></li>
+            <li class="menu-item"><span class="mi-name">グラスワイン<small>赤 / 白</small></span><span class="mi-dots"></span><span class="mi-price">¥580<small>〜</small></span></li>
+            <li class="menu-item"><span class="mi-name">クラフトビール</span><span class="mi-dots"></span><span class="mi-price">¥680</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <p class="menu-note">※ 料金・品目はすべてサンプルです。実際のメニュー・価格に差し替えてご納品します。</p>
+  </div>
+</section>
+
+<!-- ============================ 店内・席案内 ============================ -->
+<section class="section space" id="space">
+  <div class="container space-inner">
+    <div class="space-gallery">
+      <!-- TODO: 店内・席の写真へ差し替え -->
+      <img class="g-wide" src="assets/interior.jpg" alt="木洩れ日の差す木洩日の店内全体" loading="lazy">
+      <img src="assets/table.jpg" alt="木洩日のゆったりしたテーブル席" loading="lazy">
+      <img src="assets/counter.jpg" alt="木洩日のカウンター席" loading="lazy">
+    </div>
+    <div class="space-body">
+      <div class="section-head">
+        <p class="sec-eyebrow">Space &amp; Seats</p>
+        <h2 class="sec-title">木洩れ日の差す、<br>くつろぎの空間。</h2>
+      </div>
+      <p>
+        白木とグリーンを基調にした、明るくあたたかな店内。
+        ひとりのカフェタイムから、記念日のディナーまで。
+        シーンに合わせてお選びいただける席をご用意しています。
+      </p>
+      <ul class="seat-list">
+        <li class="seat-item">
+          <span class="seat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="9" width="16" height="3"/><path d="M6 12v8M18 12v8"/></svg></span>
+          <span class="seat-tx"><b>テーブル席（最大4名）</b><span>ゆったり間隔。お子様連れも歓迎です。</span></span>
+        </li>
+        <li class="seat-item">
+          <span class="seat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20v-6a8 8 0 0 1 16 0v6"/><path d="M2 20h20"/></svg></span>
+          <span class="seat-tx"><b>カウンター席</b><span>おひとり様のランチ・カフェにどうぞ。</span></span>
+        </li>
+        <li class="seat-item">
+          <span class="seat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M5 6l2 2M19 6l-2 2M4 13h16l-1 8H5z"/></svg></span>
+          <span class="seat-tx"><b>テラス席（季節限定）</b><span>木洩れ日の中で、開放的なひとときを。</span></span>
+        </li>
+        <li class="seat-item">
+          <span class="seat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="3"/><path d="M21 20v-2a4 4 0 0 0-3-3.8"/></svg></span>
+          <span class="seat-tx"><b>貸切・パーティ対応</b><span>10名様〜。誕生日・記念日プレートもご用意。</span></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ お客様の声 ============================ -->
+<section class="section voice" id="voice">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Voice</p>
+      <h2 class="sec-title">お客様の声</h2>
+      <p class="sec-lead">Googleクチコミ ★4.8（※サンプル）。信頼は、何よりの集客力。</p>
+    </div>
+    <!-- TODO: 実際のクチコミに差し替え（Googleクチコミ連携が効果的） -->
+    <div class="voice-grid">
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">ランチで利用。前菜からデザートまで全部おいしくて、コスパも最高でした。お店の雰囲気もあたたかくて、また絶対に来ます。</p>
+        <p class="voice-author">30代・女性／ランチ利用</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">結婚記念日のディナーで利用。サプライズのプレートまで用意してくださり感激。お料理もワインも文句なし。前後駅から近いのも助かります。</p>
+        <p class="voice-author">40代・男性／ディナー利用</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-stars">★★★★☆</div>
+        <p class="voice-text">自家焙煎のコーヒーとガトーショコラが絶品。ひとりでも入りやすい雰囲気で、休日の昼下がりにゆっくりできました。ごちそうさまでした。</p>
+        <p class="voice-author">20代・女性／カフェ利用</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ アクセス ============================ -->
+<section class="section access" id="access">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Access</p>
+      <h2 class="sec-title">店舗情報・アクセス</h2>
+    </div>
+    <div class="access-inner">
+      <div class="access-map">
+        <!-- TODO: Googleマップ埋め込み（iframe）に差し替え -->
+        <div class="ph" role="img" aria-label="Google マップが入ります">
+          <svg class="ph-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="ph-text">Google Map</span>
+        </div>
+      </div>
+      <div class="access-info">
+        <!-- TODO: 店舗情報を実情報へ差し替え -->
+        <table class="access-table">
+          <tbody>
+            <tr><th>店名</th><td>Bistro &amp; Cafe 木洩日（こもれび）</td></tr>
+            <tr><th>住所</th><td>〒470-1100<br>愛知県豊明市栄町0-0 ◯◯ビル1F</td></tr>
+            <tr><th>電話</th><td><a href="tel:0562000000">0562-00-0000</a></td></tr>
+            <tr><th>予算</th><td>ランチ ¥1,500 / ディナー ¥4,000（目安）</td></tr>
+            <tr><th>アクセス</th><td>名鉄名古屋本線「前後駅」徒歩4分／駐車場 共用5台</td></tr>
+          </tbody>
+        </table>
+        <!-- TODO: 営業時間・定休日を実情報へ差し替え -->
+        <table class="access-hours">
+          <caption>営業時間</caption>
+          <tbody>
+            <tr><th>ランチ</th><td>11:00 - 15:00<small>（L.O. 14:00）</small></td></tr>
+            <tr><th>ディナー</th><td>17:30 - 22:00<small>（L.O. 21:00）</small></td></tr>
+            <tr class="is-closed"><th>定休日</th><td>毎週月曜・第3火曜</td></tr>
+          </tbody>
+        </table>
+        <div class="access-actions">
+          <a href="tel:0562000000" class="btn btn-outline">電話する</a>
+          <a href="#reserve" class="btn btn-primary">ネット予約</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 予約 CTA ============================ -->
+<section class="section reserve" id="reserve">
+  <div class="container reserve-inner">
+    <p class="reserve-eyebrow">Reservation</p>
+    <h2 class="reserve-title">ご予約は、お電話か<br>ネットで かんたんに。</h2>
+    <p class="reserve-sub">
+      グルメサイト任せにせず、自社サイトから直接ご予約いただけます。
+      手数料に消えない分、お料理とサービスに還元を。<br>記念日プレート・コースのご相談もどうぞ。
+    </p>
+    <!-- TODO: 電話番号を差し替え -->
+    <p class="reserve-tel">
+      <a href="tel:0562000000">0562-00-0000</a>
+      <span>受付 11:00 - 22:00 ／ 定休日 月曜</span>
+    </p>
+    <div class="reserve-actions">
+      <!-- TODO: 予約システムURL・LINE URLを差し替え -->
+      <a href="#" class="btn btn-ghost-light btn-lg">ネット予約フォーム</a>
+      <a href="#" class="btn btn-line btn-lg">LINEで予約</a>
+      <a href="tel:0562000000" class="btn btn-ghost-light btn-lg">電話で予約</a>
+    </div>
+    <p class="reserve-note">＼ 当日のお席状況は、お電話でお問い合わせください ／</p>
+  </div>
+</section>
+
+<!-- ============================ フッター ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-en">Komorebi</span>
+        <span class="brand-jp">BISTRO &amp; CAFE ・ 豊明市</span>
+        <p class="faddr">〒470-1100 愛知県豊明市栄町0-0 ◯◯ビル1F<br>TEL 0562-00-0000 / 11:00-22:00（火〜日）</p>
+        <div class="footer-sns">
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+          <a href="#">Google Map</a>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="#concept">CONCEPT</a>
+        <a href="#menu">MENU</a>
+        <a href="#space">SPACE</a>
+        <a href="#voice">VOICE</a>
+        <a href="#access">ACCESS</a>
+        <a href="#reserve">RESERVE</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year">2026</span> Bistro &amp; Cafe 木洩日. ※これは飲食店（カフェ＆ビストロ）業種のサンプルサイトです。</p>
+      <p class="footer-credit">業種別テンプレート（飲食店）／ produced by <a href="#">Web Production</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ?still=1 で静止（アニメ無効化）→ サムネ撮影・印刷用
+  if (location.search.includes('still')) document.documentElement.classList.add('no-anim');
+  // フッターの西暦を自動更新
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // スクロールイン（セクション単位）
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section').forEach((el) => { el.classList.add('reveal'); io.observe(el); });
+
+  // カード群を順番に出す（stagger）
+  document.querySelectorAll('.menu-grid, .voice-grid, .feature-grid, .seat-list, .space-gallery').forEach((grid) => {
+    [...grid.children].forEach((c, i) => { c.style.setProperty('--d', (i * 0.08) + 's'); c.classList.add('stagger'); });
+  });
+
+  // ヘッダー：スクロールで影
+  const header = document.querySelector('.site-header');
+  addEventListener('scroll', () => { header.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
+
+  // ヒーロー画像のパララックス（登場アニメ後に作動／no-anim時は無効）
+  setTimeout(() => {
+    const hv = document.querySelector('.hero-visual');
+    if (hv && !document.documentElement.classList.contains('no-anim')) {
+      addEventListener('scroll', () => {
+        const y = Math.max(0, Math.min(scrollY, innerHeight));
+        hv.style.transform = 'translate3d(0,' + (y * 0.05).toFixed(1) + 'px,0)';
+      }, { passive: true });
+    }
+  }, 1700);
+</script>
+</body>
+</html>

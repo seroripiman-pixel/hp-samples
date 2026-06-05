@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- =========================================================
+     業種別テンプレート（サンプル）｜工務店・注文住宅・リフォーム
+     Web Production / templates/construction
+     ※社名・写真・施工事例・住所・電話・スタッフ・口コミはすべてダミー。
+       <!- - TODO - -> マーカー箇所を実情報へ差し替えて納品。
+     設計：①受け皿（信頼の器）②24時間営業マン（資料請求・相談予約導線）
+          ③ローカルSEO基本（地域＋業種キーワード・JSON-LD）
+     ========================================================= -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- TODO: 地域名・社名を実情報へ（ローカルSEOの要） -->
+<title>豊明市の工務店・注文住宅・リフォーム｜木匠の家（株式会社○○工務店）</title>
+<meta name="description" content="愛知県豊明市の地域密着工務店「木匠の家／株式会社○○工務店」。自然素材を活かした注文住宅・リフォーム・外構・耐震改修。職人の手しごとで、この街に長く愛される家づくり。無料相談・完成見学会・資料請求を24時間受付。">
+<meta name="keywords" content="豊明市,工務店,注文住宅,新築,リフォーム,外構,耐震,自然素材,木の家,愛知県">
+<meta property="og:type" content="website">
+<meta property="og:title" content="豊明市の工務店・注文住宅・リフォーム｜木匠の家">
+<meta property="og:description" content="愛知県豊明市の地域密着工務店。自然素材を活かした、この街に長く愛される家づくり。無料相談・完成見学会・資料請求受付中。">
+<meta property="og:image" content="assets/ogp.jpg">
+<meta name="theme-color" content="#8a6240">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- ローカルSEO：構造化データ（TODO: 実住所・電話・URL・営業時間へ差し替え） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "木匠の家（株式会社○○工務店）",
+  "description": "愛知県豊明市の地域密着工務店。注文住宅・リフォーム・外構・耐震改修。自然素材を活かした家づくり。",
+  "image": "assets/ogp.jpg",
+  "url": "https://example.com/",
+  "address": { "@type": "PostalAddress", "postalCode": "470-1100", "addressRegion": "愛知県", "addressLocality": "豊明市", "streetAddress": "栄町0-0" },
+  "telephone": "+81-562-00-0000",
+  "priceRange": "¥¥¥",
+  "areaServed": ["豊明市", "刈谷市", "大府市", "名古屋市緑区", "東郷町"],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============================ ヘッダー ============================ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="brand">
+      <!-- TODO: ロゴ画像に差し替え可（暫定はSVGの家アイコン） -->
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>
+      </span>
+      <span class="brand-text">
+        <!-- TODO: 社名差し替え -->
+        <span class="brand-jp">木匠の家</span>
+        <span class="brand-en">KISHO ・ TOYOAKE</span>
+      </span>
+    </a>
+    <nav class="gnav">
+      <ul class="gnav-list">
+        <li><a href="#works">施工事例</a></li>
+        <li><a href="#concept">想い</a></li>
+        <li><a href="#services">対応業務</a></li>
+        <li><a href="#flow">家づくりの流れ</a></li>
+        <li><a href="#access">会社概要</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <!-- TODO: 電話番号差し替え -->
+      <a href="tel:0562000000" class="header-tel">
+        <span class="htel-num">0562-00-0000</span>
+        <span class="htel-label">9:00 - 18:00 / 日祝休</span>
+      </a>
+      <a href="#reserve" class="btn btn-primary header-cta">無料相談</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ ヒーロー（全面・施工写真フォワード） ============================ -->
+<section class="hero hero-cine">
+  <div class="hero-media" aria-hidden="true">
+    <!-- メインビジュアルは一番自慢の施工写真へ（外観・内観）。差し替えは assets/hero.jpg を上書き -->
+    <img src="assets/hero.jpg" alt="">
+    <span class="hero-scrim"></span>
+  </div>
+  <span class="hero-bg" aria-hidden="true">木匠</span>
+  <div class="container hero-content">
+    <p class="hero-eyebrow">地域密着の工務店・豊明市
+      <span>注文住宅 ・ リフォーム ・ 外構</span>
+    </p>
+    <h1 class="hero-title">この街に、長く<br><span class="em">愛される家</span>を。</h1>
+    <p class="hero-sub">
+      派手さより、確かさを。自然素材の手ざわりと、職人の手しごとで、
+      家族の時間をやさしく包む住まいを。<br>豊明の気候・暮らしを知るからこそ建てられる、一生ものの一棟を。
+    </p>
+    <div class="hero-actions">
+      <a href="#reserve" class="btn btn-primary btn-lg">無料相談を予約する</a>
+      <a href="#works" class="btn btn-ghost-light btn-lg">施工事例を見る</a>
+    </div>
+    <div class="hero-meta">
+      <span><b>創業</b> 昭和48年</span>
+      <span><b>施工実績</b> 1,200棟超</span>
+      <span><b>地域密着</b> 豊明・刈谷・大府</span>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <p class="hb-num">Since<br>1973</p>
+    <p class="hb-label">豊明で愛されて50年</p>
+  </div>
+  <span class="hero-scroll" aria-hidden="true">SCROLL</span>
+</section>
+
+<!-- ============================ 施工事例ギャラリー（ページの主役・大判非対称） ============================ -->
+<section class="section works" id="works">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Works</p>
+      <h2 class="sec-title">施工事例</h2>
+      <p class="sec-lead">注文住宅からリフォーム・外構まで。<br>実際の施工写真を、業種タグ付きで掲載できます。お客様の「なりたい暮らし」の参考に。</p>
+    </div>
+    <!-- TODO: 施工写真・事例名・コメントを実物件に差し替え（タグ：新築/リフォーム/外構 等） -->
+    <!-- 大判の非対称ギャラリー：サイズ差・縦横ミックス・ホバー微ズーム・スクロールで画像ワイプ -->
+    <div class="works-mosaic">
+      <figure class="work-tile tile-feature">
+        <div class="work-photo">
+          <img src="assets/works-01.jpg" alt="無垢の床に包まれた平屋のリビング" loading="lazy">
+        </div>
+        <figcaption class="work-cap">
+          <span class="work-tag">新築・注文住宅</span>
+          <p class="work-cat">豊明市 K様邸</p>
+          <h3 class="work-title">無垢の床に包まれた、平屋の暮らし</h3>
+          <p class="work-desc">家族が自然と集まる大きな土間と、薪ストーブのある暮らし。経年で味わいを増す自然素材で。</p>
+          <div class="work-meta"><span>延床 <b>32坪</b></span><span>工期 <b>5ヶ月</b></span><span>木造平屋</span></div>
+        </figcaption>
+      </figure>
+      <figure class="work-tile tile-tall">
+        <div class="work-photo">
+          <img src="assets/works-03.jpg" alt="木格子と植栽の門まわり外構" loading="lazy">
+        </div>
+        <figcaption class="work-cap">
+          <span class="work-tag">外構・エクステリア</span>
+          <p class="work-cat">大府市 T様邸</p>
+          <h3 class="work-title">緑と調和する、あたたかな門まわり</h3>
+          <p class="work-desc">建物に合わせた木格子と植栽で、街並みにやさしく溶け込む外構に。駐車2台分も確保。</p>
+          <div class="work-meta"><span>敷地 <b>55坪</b></span><span>工期 <b>1ヶ月</b></span><span>植栽+土間</span></div>
+        </figcaption>
+      </figure>
+      <figure class="work-tile tile-std">
+        <div class="work-photo">
+          <img src="assets/works-02.jpg" alt="明るい二世帯にリフォームした住まい" loading="lazy">
+        </div>
+        <figcaption class="work-cap">
+          <span class="work-tag">リフォーム</span>
+          <p class="work-cat">刈谷市 S様邸</p>
+          <h3 class="work-title">築40年の家を、明るい二世帯へ</h3>
+          <p class="work-desc">耐震補強と断熱を一新。間取りを見直し、親世帯と子世帯が心地よく暮らせる住まいに再生。</p>
+          <div class="work-meta"><span>築 <b>40年</b></span><span>工期 <b>3ヶ月</b></span><span>耐震+断熱</span></div>
+        </figcaption>
+      </figure>
+      <figure class="work-tile tile-wide">
+        <div class="work-photo">
+          <img src="assets/works-04.jpg" alt="吹き抜けに光が落ちる2階リビング" loading="lazy">
+        </div>
+        <figcaption class="work-cap">
+          <span class="work-tag">新築・注文住宅</span>
+          <p class="work-cat">名古屋市緑区 M様邸</p>
+          <h3 class="work-title">吹き抜けに光が落ちる、2階リビングの家</h3>
+          <p class="work-desc">限られた間口でも開放感を。高い天井と大開口で、街なかでも明るく風が通る住まいに。</p>
+          <div class="work-meta"><span>延床 <b>38坪</b></span><span>工期 <b>6ヶ月</b></span><span>木造2階</span></div>
+        </figcaption>
+      </figure>
+      <figure class="work-tile tile-std">
+        <div class="work-photo">
+          <img src="assets/works-05.jpg" alt="対面式キッチンのある明るいLDK" loading="lazy">
+        </div>
+        <figcaption class="work-cap">
+          <span class="work-tag">水まわりリフォーム</span>
+          <p class="work-cat">豊明市 Y様邸</p>
+          <h3 class="work-title">家族と話せる、対面キッチンへ</h3>
+          <p class="work-desc">壁付けから対面式へ。収納と動線を整え、毎日の家事がぐっと楽しくなるLDKに。</p>
+          <div class="work-meta"><span>LDK <b>18帖</b></span><span>工期 <b>3週間</b></span><span>水まわり</span></div>
+        </figcaption>
+      </figure>
+      <figure class="work-tile tile-std">
+        <div class="work-photo">
+          <img src="assets/works-06.jpg" alt="耐震・断熱改修で安心の住まい" loading="lazy">
+        </div>
+        <figcaption class="work-cap">
+          <span class="work-tag">耐震・断熱改修</span>
+          <p class="work-cat">東郷町 H様邸</p>
+          <h3 class="work-title">住みながら、地震に強い家へ</h3>
+          <p class="work-desc">耐震診断から補助金申請まで一貫サポート。暮らしを止めずに、安心の構造へ補強。</p>
+          <div class="work-meta"><span>築 <b>35年</b></span><span>工期 <b>2ヶ月</b></span><span>補助金対応</span></div>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="works-cta">
+      <!-- TODO: 施工事例一覧ページ or Instagram のURLへ差し替え -->
+      <a href="#" class="btn btn-outline">施工事例をもっと見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 全面パララックス・ステートメント帯 ============================ -->
+<section class="statement" aria-label="家づくりへの想い">
+  <div class="container statement-inner">
+    <p class="statement-en">Crafted &middot; Honest &middot; Lasting</p>
+    <p class="statement-jp">流行ではなく、<br>家族の「これから」を建てる。</p>
+  </div>
+</section>
+
+<!-- ============================ 家づくりの想い・コンセプト ============================ -->
+<section class="section concept" id="concept">
+  <div class="container concept-inner">
+    <div class="concept-visual">
+      <!-- 職人の手しごと・木材の写真。差し替えは assets/concept.jpg を上書き -->
+      <img src="assets/concept.jpg" alt="木材に向き合う職人の手しごと" loading="lazy">
+    </div>
+    <div class="concept-body">
+      <div class="section-head">
+        <p class="sec-eyebrow">Concept</p>
+        <h2 class="sec-title">流行ではなく、<br>家族の「これから」を建てる。</h2>
+      </div>
+      <p><span class="lead-em">家は、暮らしの器。30年後も、好きでいられる家を。</span></p>
+      <p>
+        木匠の家（きしょうのいえ）は、豊明の地で半世紀、家づくりを続けてきました。
+        大切にしているのは、流行のデザインを追うことより、
+        その家族が30年・40年と心地よく暮らせる「確かさ」。
+      </p>
+      <p>
+        無垢の木、塗り壁、自然の風と光。手で触れてうれしい素材を、
+        顔の見える職人が一棟ずつ丁寧に。建てて終わりではなく、
+        地元の工務店として、住まいの一生に寄り添い続けます。
+      </p>
+      <p class="concept-sign">代表 ─ 大工棟梁 ／ 木村 誠一
+        <small>※サンプル。代表者名・肩書は差し替え可</small>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 流れる帯（マーキー） ============================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>木匠の家</span><span class="marquee-dot">✦</span><span>注文住宅</span><span class="marquee-dot">✦</span><span>リフォーム</span><span class="marquee-dot">✦</span><span>外構・エクステリア</span><span class="marquee-dot">✦</span><span>耐震・断熱改修</span><span class="marquee-dot">✦</span><span>自然素材の家づくり</span><span class="marquee-dot">✦</span>
+    <span>木匠の家</span><span class="marquee-dot">✦</span><span>注文住宅</span><span class="marquee-dot">✦</span><span>リフォーム</span><span class="marquee-dot">✦</span><span>外構・エクステリア</span><span class="marquee-dot">✦</span><span>耐震・断熱改修</span><span class="marquee-dot">✦</span><span>自然素材の家づくり</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ============================ 対応できること（サービス） ============================ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Services</p>
+      <h2 class="sec-title">対応できること</h2>
+      <p class="sec-lead">新築からちょっとした修繕まで。家のことなら、地元の工務店にまるごとお任せください。</p>
+    </div>
+    <!-- TODO: 取扱いサービス・対応エリア・内容を実態へ差し替え -->
+    <div class="services-grid">
+      <article class="service-card">
+        <span class="service-num">01</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-6h5v6"/></svg>
+        </div>
+        <h3 class="service-name">注文住宅・新築<small>NEW BUILD</small></h3>
+        <p class="service-text">土地探しから設計・施工まで一貫対応。自然素材を活かした、世界に一つの「わが家」を、ご予算に合わせてご提案します。</p>
+        <div class="service-tags"><span>木造</span><span>自由設計</span><span>平屋</span><span>二世帯</span></div>
+      </article>
+      <article class="service-card">
+        <span class="service-num">02</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M14 3l7 7-4 1-4-4 1-4z"/><path d="M11 6 3 14v4h4l8-8"/></svg>
+        </div>
+        <h3 class="service-name">リフォーム・増改築<small>RENOVATION</small></h3>
+        <p class="service-text">水まわりの改修から間取り変更、フルリノベーションまで。住み慣れた家を、暮らしの変化に合わせて快適に生まれ変わらせます。</p>
+        <div class="service-tags"><span>キッチン</span><span>浴室</span><span>間取り変更</span><span>バリアフリー</span></div>
+      </article>
+      <article class="service-card">
+        <span class="service-num">03</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M12 3v4"/><path d="M12 21v-4"/><path d="M5 12H3"/><path d="M21 12h-2"/><path d="M12 8a4 4 0 0 0-4 4v6h8v-6a4 4 0 0 0-4-4z"/></svg>
+        </div>
+        <h3 class="service-name">外構・エクステリア<small>EXTERIOR</small></h3>
+        <p class="service-text">門まわり・駐車場・庭・ウッドデッキ。建物と調和し、街並みにやさしく溶け込む外構を、植栽計画まで含めてデザインします。</p>
+        <div class="service-tags"><span>カーポート</span><span>植栽</span><span>ウッドデッキ</span><span>土間</span></div>
+      </article>
+      <article class="service-card">
+        <span class="service-num">04</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg>
+        </div>
+        <h3 class="service-name">耐震・断熱改修<small>SEISMIC ・ INSULATION</small></h3>
+        <p class="service-text">耐震診断から補強工事、断熱リフォームまで。大切なご家族と住まいを地震・暑さ寒さから守ります。補助金の申請もサポート。</p>
+        <div class="service-tags"><span>耐震診断</span><span>補強工事</span><span>断熱</span><span>補助金対応</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 家づくりの流れ（STEP） ============================ -->
+<section class="section flow" id="flow">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Flow</p>
+      <h2 class="sec-title">家づくりの流れ</h2>
+      <p class="sec-lead">はじめての家づくりも、ご安心を。ご相談から引き渡し・アフターまで、一つずつ丁寧にご案内します。</p>
+    </div>
+    <!-- TODO: 自社の実際の流れ・期間に差し替え -->
+    <div class="flow-list">
+      <div class="flow-step">
+        <div class="flow-num"><span class="fn-label">STEP</span><span class="fn-no">1</span></div>
+        <div class="flow-body">
+          <span class="flow-tag">無料・お気軽に</span>
+          <h3>ご相談・お問い合わせ</h3>
+          <p>まずは、お電話・フォーム・LINEからお気軽に。「土地探しから」「予算が不安」でも大丈夫。完成見学会へのご参加も歓迎です。無理な営業は一切いたしません。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num"><span class="fn-label">STEP</span><span class="fn-no">2</span></div>
+        <div class="flow-body">
+          <span class="flow-tag">じっくりヒアリング</span>
+          <h3>ご要望ヒアリング・現地調査</h3>
+          <p>暮らしのご希望・ご予算をじっくりお伺いします。リフォームや外構は現地を拝見し、住まいの状態を確認。家族の「こうしたい」を一緒に整理します。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num"><span class="fn-label">STEP</span><span class="fn-no">3</span></div>
+        <div class="flow-body">
+          <span class="flow-tag">ご納得いただくまで</span>
+          <h3>プラン・お見積りのご提案</h3>
+          <p>ヒアリングをもとに、間取りプランと明朗なお見積りをご提示。図面とご予算にご納得いただけるまで、何度でも丁寧に打ち合わせを重ねます。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num"><span class="fn-label">STEP</span><span class="fn-no">4</span></div>
+        <div class="flow-body">
+          <span class="flow-tag">職人の手しごと</span>
+          <h3>ご契約・着工・施工</h3>
+          <p>ご契約後、いよいよ着工。地元の職人が一棟ずつ丁寧に施工し、工事の進み具合はこまめにご報告。現場見学もいつでもどうぞ。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num"><span class="fn-label">STEP</span><span class="fn-no">5</span></div>
+        <div class="flow-body">
+          <span class="flow-tag">建ててからも、ずっと</span>
+          <h3>お引き渡し・アフター保証</h3>
+          <p>完成検査ののち、お引き渡し。定期点検と長期保証で、住まいの一生に寄り添います。地元の工務店だから、何かあればすぐ駆けつけます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ お客様の声 ============================ -->
+<section class="section voice">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Voice</p>
+      <h2 class="sec-title">お客様の声</h2>
+      <p class="sec-lead">Googleクチコミ ★4.9（※サンプル）。家を建てたご家族からの、うれしい言葉。</p>
+    </div>
+    <!-- TODO: 実際のお客様の声・アンケートに差し替え（Googleクチコミ連携が効果的） -->
+    <div class="voice-grid">
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">予算の相談に本当に親身にのってくださいました。無垢の床は冬でも素足が気持ちよく、子どもが一番のびのび過ごしています。お願いして大正解でした。</p>
+        <p class="voice-author"><b>豊明市・K様邸</b>注文住宅／4人家族</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">築40年の実家を二世帯にリフォーム。住みながらの工事でしたが、職人さんの気配りが行き届いていて安心でした。明るく暖かい家に生まれ変わりました。</p>
+        <p class="voice-author"><b>刈谷市・S様邸</b>フルリフォーム</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">他社は契約を急かす中、ここだけは図面を何度も書き直してくれました。引き渡し後の点検もきちんと来てくださり、地元の工務店にお願いしてよかったです。</p>
+        <p class="voice-author"><b>大府市・T様邸</b>注文住宅＋外構</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 無料相談・見学会 CTA ============================ -->
+<section class="section reserve" id="reserve">
+  <div class="container reserve-inner">
+    <p class="reserve-eyebrow">Free Consultation</p>
+    <h2 class="reserve-title">まずは、無料相談・<br>完成見学会へ。</h2>
+    <p class="reserve-sub">
+      「土地から探したい」「今の家をどうにかしたい」——
+      どんな小さなことでも、家のプロにお気軽にご相談ください。
+      しつこい営業は一切いたしません。<br>資料請求・完成見学会のご予約も、24時間こちらから。
+    </p>
+    <div class="reserve-actions">
+      <!-- TODO: 予約フォームURL・資料請求URL・LINE URL・電話番号を差し替え -->
+      <a href="#" class="btn btn-ghost-light btn-lg">無料相談を予約</a>
+      <a href="#" class="btn btn-ghost-light btn-lg">資料請求する</a>
+      <a href="#" class="btn btn-line btn-lg">LINEで相談</a>
+      <a href="tel:0562000000" class="btn btn-ghost-light btn-lg">電話する</a>
+    </div>
+    <p class="reserve-note">＼ ご相談・お見積り・プラン提案まで無料。じっくりご検討ください ／</p>
+  </div>
+</section>
+
+<!-- ============================ 会社概要・アクセス ============================ -->
+<section class="section access" id="access">
+  <div class="container">
+    <div class="section-head center">
+      <p class="sec-eyebrow">Company</p>
+      <h2 class="sec-title">会社概要・アクセス</h2>
+    </div>
+    <div class="access-inner">
+      <div class="access-map">
+        <!-- TODO: Googleマップ埋め込み（iframe）に差し替え -->
+        <div class="ph" role="img" aria-label="Google マップが入ります">
+          <svg class="ph-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="ph-text">Google Map</span>
+        </div>
+      </div>
+      <div class="access-info">
+        <!-- TODO: 会社情報を実情報へ差し替え -->
+        <table class="access-table">
+          <tbody>
+            <tr><th>会社名</th><td>木匠の家／株式会社○○工務店</td></tr>
+            <tr><th>所在地</th><td>〒470-1100<br>愛知県豊明市栄町0-0</td></tr>
+            <tr><th>電話</th><td><a href="tel:0562000000">0562-00-0000</a></td></tr>
+            <tr><th>営業時間</th><td>9:00〜18:00</td></tr>
+            <tr><th>定休日</th><td>日曜・祝日（完成見学会開催日を除く）</td></tr>
+            <tr><th>事業内容</th><td>注文住宅・リフォーム・外構・耐震/断熱改修</td></tr>
+            <tr><th>建設業許可</th><td>愛知県知事 許可（般-00）第00000号 ※サンプル</td></tr>
+            <tr><th>対応エリア</th><td>豊明市・刈谷市・大府市・名古屋市緑区・東郷町 ほか</td></tr>
+          </tbody>
+        </table>
+        <div class="access-actions">
+          <a href="tel:0562000000" class="btn btn-outline">電話する</a>
+          <a href="#reserve" class="btn btn-primary">無料相談</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ フッター ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-jp">木匠の家</span>
+        <span class="brand-en">KISHO ・ TOYOAKE</span>
+        <!-- TODO: 会社情報を実情報へ差し替え -->
+        <p class="faddr">〒470-1100 愛知県豊明市栄町0-0<br>TEL 0562-00-0000 / 9:00-18:00（日祝休）<br>建設業許可：愛知県知事（般-00）第00000号 ※サンプル</p>
+        <div class="footer-sns">
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+          <a href="#">Google Map</a>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="#works">施工事例</a>
+        <a href="#concept">家づくりの想い</a>
+        <a href="#services">対応できること</a>
+        <a href="#flow">家づくりの流れ</a>
+        <a href="#access">会社概要</a>
+        <a href="#reserve">無料相談</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="year">2026</span> 木匠の家（株式会社○○工務店）. ※これは工務店業種のサンプルサイトです。</p>
+      <p class="footer-credit">業種別テンプレート（工務店）／ produced by <a href="#">Web Production</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  if (location.search.includes('still')) document.documentElement.classList.add('no-anim');
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // スクロールイン（セクション単位）
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section').forEach((el) => { el.classList.add('reveal'); io.observe(el); });
+
+  // カード群を順番に出す（stagger）
+  document.querySelectorAll('.works-mosaic, .services-grid, .voice-grid, .flow-list').forEach((grid) => {
+    [...grid.children].forEach((c, i) => { c.style.setProperty('--d', (i * 0.08) + 's'); c.classList.add('stagger'); });
+  });
+
+  // ヘッダー：スクロールで影（全面ヒーロー上は透明→スクロールで木質帯）
+  const header = document.querySelector('.site-header');
+  addEventListener('scroll', () => { header.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
+
+  // 全面ヒーローの背景画像にゆるやかなパララックス（登場後に作動／no-anim時は無効）
+  setTimeout(() => {
+    const hm = document.querySelector('.hero-cine .hero-media');
+    if (hm && !document.documentElement.classList.contains('no-anim')) {
+      addEventListener('scroll', () => {
+        const y = Math.max(0, Math.min(scrollY, innerHeight));
+        hm.style.transform = 'translate3d(0,' + (y * 0.12).toFixed(1) + 'px,0)';
+      }, { passive: true });
+    }
+  }, 1700);
+</script>
+</body>
+</html>
