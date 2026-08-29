@@ -1,0 +1,32 @@
+{
+  "profile": "3党合流（中道改革連合・立憲民主党・公明党）関連の発言 一括走査",
+  "since": "2026-01-01",
+  "until": "2026-12-31",
+  "sub_langs": "ja,ja-JP,ja-orig,ja.*",
+  "sources": [
+    {
+      "name": "国民民主党 公式チャンネル",
+      "url": "https://www.youtube.com/channel/UCJc_jL0yOBGychLgiTCGtPw/videos",
+      "title_regex": "榛葉|幹事長会見|幹事長 会見"
+    },
+    {
+      "name": "中道改革連合 公式チャンネル",
+      "url": "https://www.youtube.com/@CRAJ2026/videos",
+      "title_regex": "会見|小川|代表"
+    }
+  ],
+  "keywords": [
+    "中道改革連合",
+    "合流",
+    "統一会派",
+    "3党",
+    "３党",
+    "三党",
+    "存続合併",
+    "新設合併",
+    "中間整理",
+    "党首会談",
+    "見送り"
+  ],
+  "context": { "before_sec": 45, "after_sec": 120, "merge_gap_sec": 60 }
+}

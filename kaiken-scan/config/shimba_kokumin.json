@@ -1,0 +1,37 @@
+{
+  "profile": "国民民主党・榛葉賀津也幹事長 定例会見（公式チャンネル）",
+  "since": "2026-01-01",
+  "until": "2026-12-31",
+  "sub_langs": "ja,ja-JP,ja-orig,ja.*",
+  "sources": [
+    {
+      "name": "国民民主党 公式チャンネル",
+      "url": "https://www.youtube.com/channel/UCJc_jL0yOBGychLgiTCGtPw/videos",
+      "title_regex": "榛葉|幹事長会見|幹事長 会見"
+    },
+    {
+      "name": "国民民主党 代表・幹事長会見（プレイリスト）",
+      "url": "https://www.youtube.com/playlist?list=PLlYTJtGiYHrHqs9j62uIMURpqA0TXdZN3",
+      "title_regex": "榛葉|幹事長会見|幹事長 会見"
+    }
+  ],
+  "keywords": [
+    "中道改革連合",
+    "中道",
+    "合流",
+    "立憲",
+    "公明",
+    "3党",
+    "３党",
+    "三党",
+    "統一会派",
+    "会派",
+    "野党再編",
+    "政界再編",
+    "新党",
+    "小川",
+    "水岡",
+    "竹谷"
+  ],
+  "context": { "before_sec": 45, "after_sec": 120, "merge_gap_sec": 60 }
+}
