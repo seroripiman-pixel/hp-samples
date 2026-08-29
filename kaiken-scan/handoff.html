@@ -80,6 +80,17 @@
   .warning p:last-child{margin-bottom:0}
   .warning ul{margin:0 0 9px; padding-left:1.25em; font-size:14px}
 
+  .update{
+    background:var(--surface); border:1px solid var(--rule); border-left:5px solid var(--accent);
+    padding:18px 22px; margin:16px 0 0;
+  }
+  .update h2{
+    font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 10px;
+  }
+  .update p{margin:0 0 9px; font-size:14px; line-height:1.85}
+  .update p:last-child{margin-bottom:0}
+
   /* ---------- layout ---------- */
   .cols{display:grid; grid-template-columns:1fr; gap:0}
   @media (min-width:1000px){
@@ -238,6 +249,15 @@
   </ul>
   <p>各記録に付けた <b>A／B／C</b> は確度である。<b>公開・引用の前に、必ず出典URLと会見映像で裏を取ること。</b>
   特に C はそのまま使ってはいけない。</p>
+</div>
+
+<div class="update">
+  <h2>更新ログ — 2026-08-29 10:41 JST 再確認</h2>
+  <p>状況に動きなし。3党の再会談（8/31）も榛葉幹事長の次回定例会見（9/4）もまだ先。
+  <b>榛葉幹事長の 8/28 会見は、YouTube にも公式サイトにも検索インデックスに乗っておらず、依然として特定できていない。</b></p>
+  <p>YouTube への直接アクセスは引き続き遮断。vidIQ の YouTube 検索も試したが、アカウントのクレジットが尽きていて使えなかった。</p>
+  <p>今回の更新: 8/28 党首会談の中身（水岡代表の発言と今後の段取り）を O-12 に追記。
+  公式サイトのURLの読み方（引き継ぎ事項 3）を訂正。</p>
 </div>
 
 <div class="cols">
@@ -401,7 +421,7 @@
         見送り方針自体は前日8月27日に各社が報じているため、<b>それへの反応が入っている可能性は高い</b>。</p>
         <p>この日の会見動画は検索インデックスに未収載で、URLを特定できなかった。</p>
         <div class="fields">
-          <div><dt>会見記録（推定URL）</dt><dd><a href="https://new-kokumin.jp/news/business/20260828_2">new-kokumin.jp/news/business/20260828_2</a><br><span style="color:var(--ink-3);font-size:12px">※URLパターンからの推定。要確認</span></dd></div>
+          <div><dt>会見記録の探し方</dt><dd><a href="https://new-kokumin.jp/tag/secretary-general">new-kokumin.jp/tag/secretary-general</a><br><span style="color:var(--ink-3);font-size:12px">※日付からURLは組み立てられない。一覧から辿ること（→ 引き継ぎ事項 3）</span></dd></div>
           <div><dt>タイムスタンプ</dt><dd><span class="empty">未取得</span></dd></div>
         </div>
       </div>
@@ -589,9 +609,12 @@
         <span class="rwhere">3党党首会談（16:45〜、約25分、国会内）</span><span class="badge c">確度 C</span>
       </div>
       <div class="rec-body">
-        <p>小川淳也（中道）・水岡俊一（立憲）・竹谷とし子（公明）の3代表が会談し、
-        立憲が合流しない方針を伝達。立憲は参院での公明との統一会派を呼びかけたが、
-        公明は基本政策の違いを理由に「考えていない」と否定した。</p>
+        <p>小川淳也（中道）・水岡俊一（立憲）・竹谷とし子（公明）の3代表が会談し、立憲が合流しない方針を伝達。</p>
+        <blockquote>中道への組織的合流はしない（水岡俊一・立憲民主党代表）</blockquote>
+        <p>そのうえで水岡氏は、秋の臨時国会での<b>統一会派結成</b>など3党連携は続けたい考えを示した。
+        公明は安全保障など基本政策が異なることを理由に、統一会派の結成は「考えていない」と否定。
+        水岡氏はあわせて<b>「来年の通常国会会期末までに改めて政権交代を目指す政治勢力の結集を図りたい」</b>と訴えた。
+        中道と公明はこれを踏まえてそれぞれ党内で対応を協議し、31日にも3党首が改めて会談する。</p>
         <p><b>会談後、3党首は会場を後にし、取材に応じたのは3幹事長
         （中道・階猛／立憲・田名部匡代／公明・西田実仁）だった。</b>
         小川氏本人がこの日どこかで会見したかは未確認。</p>
@@ -666,10 +689,16 @@
       </li>
       <li>
         <b>公式サイトの会見記録ページを使う（映像より速い）</b>
-        <p>国民民主党の公式サイトには会見の記録ページがあり、URLが規則的。
-        <code>https://new-kokumin.jp/news/business/YYYYMMDD_2</code> が幹事長定例会見、
-        <code>_1</code> がぶら下がり会見。
-        実在を確認済みなのは <code>20260619_2</code>（6/19 幹事長定例会見）、<code>20260115_1</code>（1/15 玉木代表ぶら下がり）、<code>20251017_2</code>。
+        <p>国民民主党の公式サイトに会見の記録ページがある。URLは
+        <code>https://new-kokumin.jp/news/business/YYYYMMDD_N</code> の形だが、
+        <b>末尾の N はその日の投稿の通し番号で、会見の種類とは対応していない</b>（<code>_1</code> <code>_2</code> <code>_3</code> いずれもあり得る）。
+        日付からURLを組み立てず、一覧ページから辿ること。</p>
+        <p>会見一覧 <a href="https://new-kokumin.jp/tag/press-conference">/tag/press-conference</a>　/　
+        幹事長 <a href="https://new-kokumin.jp/tag/secretary-general">/tag/secretary-general</a>　/　
+        榛葉賀津也 <a href="https://new-kokumin.jp/tag/shimba-kazuya">/tag/shimba-kazuya</a></p>
+        <p>実在を確認できたページ: <code>20260619_2</code>（6/19 幹事長定例会見）、<code>20260612_3</code>、
+        <code>20260522_2</code>、<code>20260508_2</code>、<code>20260306_1</code>、
+        <code>20260115_1</code>（1/15 玉木代表ぶら下がり）、<code>20251017_2</code>、<code>20251023_1</code> / <code>20251023_2</code>。
         <b>映像を見なくてもテキストで発言を拾える可能性が高い。ここから当たるのが早い。</b></p>
       </li>
       <li>
