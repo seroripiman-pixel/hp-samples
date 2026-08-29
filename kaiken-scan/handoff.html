@@ -1,0 +1,762 @@
+<title>3党合流 発言記録の引き継ぎ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --ground:#EFF1F4; --surface:#FFFFFF; --surface-2:#F7F8FA;
+    --ink:#14161B; --ink-2:#545B69; --ink-3:#858C9B;
+    --rule:#DDE1E8; --rule-strong:#C3CAD6;
+    --accent:#1F3A6E; --accent-soft:#E7ECF5;
+    --ok:#1B6E4A; --warn:#8A6100; --risk:#A32B2B;
+    --ok-bg:#E4F0EA; --warn-bg:#F6EEDC; --risk-bg:#F7E5E5;
+    --mincho:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+    --gothic:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#101217; --surface:#181B22; --surface-2:#1F232C;
+      --ink:#E7E9EE; --ink-2:#A2A9B8; --ink-3:#737B8C;
+      --rule:#2A2F3A; --rule-strong:#3A4150;
+      --accent:#8FB0E8; --accent-soft:#1B2540;
+      --ok:#5CBE8C; --warn:#D9A94F; --risk:#E8827E;
+      --ok-bg:#15271F; --warn-bg:#2A2213; --risk-bg:#2C1A1A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#101217; --surface:#181B22; --surface-2:#1F232C;
+    --ink:#E7E9EE; --ink-2:#A2A9B8; --ink-3:#737B8C;
+    --rule:#2A2F3A; --rule-strong:#3A4150;
+    --accent:#8FB0E8; --accent-soft:#1B2540;
+    --ok:#5CBE8C; --warn:#D9A94F; --risk:#E8827E;
+    --ok-bg:#15271F; --warn-bg:#2A2213; --risk-bg:#2C1A1A;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground); color:var(--ink);
+    font-family:var(--gothic); font-size:15px; line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-underline-offset:.2em; text-decoration-thickness:.06em}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px 96px}
+
+  /* ---------- masthead ---------- */
+  header.mast{
+    border-bottom:2px solid var(--ink); padding:44px 0 20px; margin-bottom:8px;
+  }
+  .kicker{
+    font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--accent); display:flex; flex-wrap:wrap; gap:10px 18px; margin-bottom:18px;
+  }
+  h1{
+    font-family:var(--mincho); font-weight:700; font-size:clamp(30px,5.2vw,50px);
+    line-height:1.25; letter-spacing:.01em; margin:0 0 14px; text-wrap:balance;
+  }
+  .standfirst{
+    font-size:16px; color:var(--ink-2); max-width:64ch; margin:0 0 22px; line-height:1.9;
+  }
+  .meta{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(168px,1fr)); gap:1px;
+    background:var(--rule); border:1px solid var(--rule);
+  }
+  .meta div{background:var(--surface); padding:11px 14px}
+  .meta dt{font-family:var(--mono); font-size:10px; letter-spacing:.12em; color:var(--ink-3); text-transform:uppercase; margin:0 0 3px}
+  .meta dd{margin:0; font-size:13px; font-weight:500; line-height:1.55}
+
+  /* ---------- warning ---------- */
+  .warning{
+    background:var(--risk-bg); border:1px solid var(--risk); border-left-width:5px;
+    padding:20px 22px; margin:30px 0 0;
+  }
+  .warning h2{
+    font-family:var(--gothic); font-size:14px; font-weight:700; margin:0 0 10px;
+    color:var(--risk); letter-spacing:.02em;
+  }
+  .warning p{margin:0 0 9px; font-size:14px; line-height:1.85}
+  .warning p:last-child{margin-bottom:0}
+  .warning ul{margin:0 0 9px; padding-left:1.25em; font-size:14px}
+
+  /* ---------- layout ---------- */
+  .cols{display:grid; grid-template-columns:1fr; gap:0}
+  @media (min-width:1000px){
+    .cols{grid-template-columns:186px 1fr; gap:56px; align-items:start}
+    nav.toc{position:sticky; top:24px; padding-top:52px}
+  }
+  nav.toc ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px}
+  nav.toc a{
+    display:block; padding:6px 0 6px 12px; border-left:2px solid var(--rule);
+    font-size:13px; color:var(--ink-2); text-decoration:none; line-height:1.5;
+  }
+  nav.toc a:hover{border-left-color:var(--accent); color:var(--accent)}
+  @media (max-width:999px){ nav.toc{display:none} }
+
+  section{padding-top:52px; scroll-margin-top:20px}
+  h2.sec{
+    font-family:var(--mincho); font-size:25px; font-weight:700; margin:0 0 6px;
+    padding-bottom:10px; border-bottom:1px solid var(--rule-strong); letter-spacing:.02em;
+  }
+  .sec-note{color:var(--ink-3); font-size:13px; margin:0 0 26px; line-height:1.7}
+
+  /* ---------- summary ---------- */
+  .summary{background:var(--surface); border:1px solid var(--rule); padding:24px 26px}
+  .summary p{margin:0 0 14px; font-size:15px}
+  .summary p:last-child{margin:0}
+  .summary strong{background:var(--accent-soft); padding:1px 4px; font-weight:700}
+
+  /* ---------- records ---------- */
+  .rec{
+    background:var(--surface); border:1px solid var(--rule); border-left:4px solid var(--rule-strong);
+    margin-bottom:14px; display:grid; grid-template-columns:1fr;
+  }
+  .rec.a{border-left-color:var(--ok)}
+  .rec.b{border-left-color:var(--warn)}
+  .rec.c{border-left-color:var(--risk)}
+  .rec.pending{border-left-style:dashed; background:var(--surface-2)}
+  .rec-head{
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 14px;
+    padding:14px 20px 10px; border-bottom:1px dotted var(--rule-strong);
+  }
+  .rid{font-family:var(--mono); font-size:11px; font-weight:600; color:var(--ink-3); letter-spacing:.08em}
+  .rdate{font-family:var(--mono); font-size:14px; font-weight:600; font-variant-numeric:tabular-nums}
+  .rwhere{font-size:13px; color:var(--ink-2)}
+  .badge{
+    margin-left:auto; font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:.1em;
+    padding:3px 8px; border:1px solid currentColor; white-space:nowrap;
+  }
+  .badge.a{color:var(--ok); background:var(--ok-bg)}
+  .badge.b{color:var(--warn); background:var(--warn-bg)}
+  .badge.c{color:var(--risk); background:var(--risk-bg)}
+  .rec-body{padding:16px 20px 18px}
+  .rec-body > *:first-child{margin-top:0}
+  .rec-body > *:last-child{margin-bottom:0}
+  .rec-body p{margin:0 0 12px; font-size:14.5px}
+  blockquote{
+    margin:0 0 14px; padding:12px 0 12px 18px; border-left:3px solid var(--accent);
+    font-family:var(--mincho); font-size:16px; line-height:1.95; color:var(--ink);
+  }
+  .fields{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1px;
+    background:var(--rule); border:1px solid var(--rule); margin:0 0 14px;
+  }
+  .fields div{background:var(--surface-2); padding:9px 12px}
+  .rec.pending .fields div{background:var(--surface)}
+  .fields dt{font-family:var(--mono); font-size:10px; letter-spacing:.1em; color:var(--ink-3); text-transform:uppercase; margin:0 0 2px}
+  .fields dd{margin:0; font-size:13px; line-height:1.6; word-break:break-word}
+  .fields dd a{font-family:var(--mono); font-size:12px}
+  .empty{
+    font-family:var(--mono); font-size:12px; color:var(--risk);
+    border-bottom:1px dashed var(--risk); padding-bottom:1px;
+  }
+  .src{font-size:12.5px; color:var(--ink-2); line-height:1.75; margin:0}
+  .src::before{
+    content:"出典"; font-family:var(--mono); font-size:10px; letter-spacing:.1em;
+    color:var(--ink-3); display:block; margin-bottom:2px;
+  }
+  .src a{word-break:break-all}
+
+  /* ---------- table ---------- */
+  .tablewrap{overflow-x:auto; border:1px solid var(--rule); background:var(--surface)}
+  table{border-collapse:collapse; width:100%; min-width:600px; font-size:13.5px}
+  th,td{padding:9px 14px; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule)}
+  thead th{
+    font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); background:var(--surface-2); font-weight:600; white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none}
+  td.d{font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:500}
+  tr.key td{background:var(--accent-soft)}
+  tr.key td.d{font-weight:600}
+
+  /* ---------- todo ---------- */
+  ol.todo{list-style:none; counter-reset:t; margin:0; padding:0; display:flex; flex-direction:column; gap:12px}
+  ol.todo li{
+    counter-increment:t; background:var(--surface); border:1px solid var(--rule);
+    padding:15px 20px 15px 56px; position:relative; font-size:14px;
+  }
+  ol.todo li::before{
+    content:counter(t); position:absolute; left:0; top:0; bottom:0; width:40px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:15px; font-weight:600; color:var(--accent);
+    background:var(--accent-soft); border-right:1px solid var(--rule);
+  }
+  ol.todo b{display:block; margin-bottom:3px; font-size:14.5px}
+  ol.todo p{margin:0; color:var(--ink-2); font-size:13.5px; line-height:1.75}
+  ol.todo code{font-family:var(--mono); font-size:12.5px; background:var(--surface-2); padding:1px 5px; border:1px solid var(--rule)}
+
+  /* ---------- sources ---------- */
+  .srcgrid{display:grid; grid-template-columns:1fr; gap:0; background:var(--surface); border:1px solid var(--rule)}
+  .srcgrid h3{
+    font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); margin:0; padding:12px 18px 6px; border-top:1px solid var(--rule);
+  }
+  .srcgrid h3:first-child{border-top:none}
+  .srcgrid ul{margin:0; padding:0 18px 14px 34px; font-size:13px; line-height:1.8}
+  .srcgrid li{margin-bottom:4px}
+  .srcgrid a{word-break:break-word}
+
+  footer{
+    margin-top:64px; padding-top:20px; border-top:2px solid var(--ink);
+    font-size:12.5px; color:var(--ink-3); line-height:1.8;
+  }
+  code{font-family:var(--mono)}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="kicker">
+    <span>取材メモ／引き継ぎ資料</span>
+    <span>2026.08.29 時点</span>
+    <span>未検証を含む</span>
+  </div>
+  <h1>3党合流をめぐる<br>榛葉・小川 両氏の発言記録</h1>
+  <p class="standfirst">
+    中道改革連合・立憲民主党・公明党の3党合流は、2026年8月28日の党首会談で白紙になった。
+    この文書は、国民民主党の榛葉賀津也幹事長と中道改革連合の小川淳也代表が
+    この件について何を、いつ、どこで語ったかを、検証状態つきで引き継ぐためのものである。
+  </p>
+  <dl class="meta">
+    <div><dt>対象</dt><dd>榛葉賀津也（国民民主党 幹事長）<br>小川淳也（中道改革連合 代表）</dd></div>
+    <div><dt>収録記録数</dt><dd>榛葉 6件／小川 12件</dd></div>
+    <div><dt>タイムスタンプ</dt><dd><span class="empty">全件 未取得</span></dd></div>
+    <div><dt>情報源</dt><dd>検索スニペットのみ<br>一次記事は未読</dd></div>
+  </dl>
+</header>
+
+<div class="warning">
+  <h2>この文書の限界（先に読むこと）</h2>
+  <p>調査を行った環境から、<b>youtube.com と主要報道サイトの全てがネットワークポリシーで遮断</b>されていた。
+  そのため次が達成できていない。</p>
+  <ul>
+    <li><b>会見動画内のタイムスタンプは1件も取得できていない。</b>字幕・概要欄にアクセスできないため。</li>
+    <li>公式チャンネルの動画一覧を取得できていないため、<b>「全ての言及」を網羅できていない</b>。記事化されなかった発言は落ちている。</li>
+    <li>引用はすべて<b>検索結果のスニペット経由</b>で、記事本文を読んでいない。表記のゆれ・前後の省略があり得る。</li>
+  </ul>
+  <p>各記録に付けた <b>A／B／C</b> は確度である。<b>公開・引用の前に、必ず出典URLと会見映像で裏を取ること。</b>
+  特に C はそのまま使ってはいけない。</p>
+</div>
+
+<div class="cols">
+  <nav class="toc">
+    <ol>
+      <li><a href="#summary">30秒サマリー</a></li>
+      <li><a href="#shimba">榛葉幹事長の言及</a></li>
+      <li><a href="#ogawa">小川代表の言及</a></li>
+      <li><a href="#timeline">協議の時系列</a></li>
+      <li><a href="#todo">引き継ぎ事項</a></li>
+      <li><a href="#sources">出典一覧</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+  <section id="summary">
+    <h2 class="sec">30秒サマリー</h2>
+    <p class="sec-note">前提を知らない人が最初に読む部分。</p>
+    <div class="summary">
+      <p>2026年1月、立憲民主党と公明党の<b>衆院議員</b>が新党「中道改革連合（略称・中道）」を結成した。
+      野田佳彦・斉藤鉄夫の共同代表制で発足したが、2月8日の衆院選で大敗し、
+      2月13日の代表選で<b>小川淳也</b>が新代表に就いた。</p>
+      <p>参院議員は立憲・公明に残ったままだったため、
+      <strong>「参院も含めた3党の完全合流」</strong>が積み残しとなり、これが今年前半の協議テーマだった。
+      7月31日の党首会談で「8月末までに結論」と中間整理したが、
+      立憲の地方組織・所属議員の反発が収まらず、<strong>8月27日に立憲が見送りを決定</strong>。
+      翌28日の3党党首会談で正式に伝達され、合流は白紙になった。</p>
+      <p>国民民主党はこの新党に当初から参加しておらず（玉木代表「結集軸が極めて曖昧」）、
+      <strong>榛葉幹事長は一貫して外部からの批判者</strong>の位置にいる。
+      その論法は<b>「数字の皮肉」</b>（1+1が0.5／0.28）と<b>「安保政策の転向」</b>（辺野古容認）の2本立てで、
+      連合の芳野会長から批判を控えるよう要請が入るほどだった。</p>
+    </div>
+  </section>
+
+  <section id="shimba">
+    <h2 class="sec">榛葉賀津也 幹事長（国民民主党）の言及</h2>
+    <p class="sec-note">
+      定例会見は毎週金曜14時、国民民主党公式YouTubeで配信。
+      公式サイトにも会見記録のページがある（→ <a href="#todo">引き継ぎ事項 3</a>）。
+      以下は時系列。
+    </p>
+
+    <article class="rec c">
+      <div class="rec-head">
+        <span class="rid">S-1</span>
+        <span class="rdate">2026-02-06</span>
+        <span class="rwhere">大阪市内・衆院選 街頭演説（会見ではない）</span>
+        <span class="badge c">確度 C</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>野党第1党が自爆しちゃった／1+1が0.5に</blockquote>
+        <p>衆院選終盤、報道各社の情勢調査で中道の大幅議席減が予測されるなかでの発言。
+        中道を暗に指しつつ、国民民主党こそが最大野党になるべきだと訴える文脈（"中道超え"）。</p>
+        <div class="fields">
+          <div><dt>会見リンク</dt><dd><span class="empty">該当なし（街頭演説）</span></dd></div>
+          <div><dt>タイムスタンプ</dt><dd><span class="empty">未取得</span></dd></div>
+        </div>
+        <p class="src">よろず〜ニュース「国民・榛葉幹事長『野党第1党が自爆しちゃった』『1+1が0.5に』"中道超え"へ 最大野党化訴える」<br>
+        <a href="https://news.yahoo.co.jp/articles/5d74232c123857ddd92452d1a0cb979f2341c606">news.yahoo.co.jp/articles/5d74232c…</a></p>
+      </div>
+    </article>
+
+    <article class="rec b">
+      <div class="rec-head">
+        <span class="rid">S-2</span>
+        <span class="rdate">2026-02-09 頃</span>
+        <span class="rwhere">連合からの申し入れ（榛葉氏の発言ではないが、批判の量を示す文脈証拠）</span>
+        <span class="badge b">確度 B</span>
+      </div>
+      <div class="rec-body">
+        <p>連合の芳野友子会長が、国民民主党の玉木雄一郎代表に対し
+        <b>「中道改革連合の批判を控えて」</b>と要請した。
+        国民民主側の中道批判が、支持組織から問題視される水準に達していたことを示す。
+        榛葉氏の一連の発言を評価するうえでの前提になる。</p>
+        <p class="src">日本経済新聞「連合・芳野友子会長『中道改革連合の批判控えて』国民民主党の玉木雄一郎代表に要請」<br>
+        <a href="https://www.nikkei.com/article/DGXZQOUA095JO0Z00C26A2000000/">nikkei.com/article/DGXZQOUA095JO0Z00C26A2000000/</a></p>
+      </div>
+    </article>
+
+    <article class="rec b">
+      <div class="rec-head">
+        <span class="rid">S-3</span>
+        <span class="rdate">2026-06-19（金）</span>
+        <span class="rwhere">幹事長定例会見</span>
+        <span class="badge b">確度 B</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>（3党が合流すれば）野党第一党が辺野古容認に舵を切る大きな一歩になる</blockquote>
+        <p>沖縄県知事選の争点としても言及。榛葉氏自身は同年5月に那覇で
+        「辺野古移設は現実を受け入れるしかない」と国民民主党としての容認を表明済みで、
+        <b>「うちはもう容認した。合流するならそちらも同じ方向に来ることになる」</b>という論法。</p>
+        <p>第三者の切り抜き動画のタイトルによれば、この回は
+        「立憲×公明の合流」「沖縄知事選」「中国の脅威」「自衛隊軽視発言」が続けて語られており、
+        <b>合流の話は沖縄・安全保障の文脈で出ている</b>とみられる。</p>
+        <div class="fields">
+          <div><dt>会見リンク（公式YouTube）</dt><dd><a href="https://www.youtube.com/watch?v=wrnjoj6qkxM">youtube.com/watch?v=wrnjoj6qkxM</a></dd></div>
+          <div><dt>会見記録（公式サイト）</dt><dd><a href="https://new-kokumin.jp/news/business/20260619_2">new-kokumin.jp/news/business/20260619_2</a></dd></div>
+          <div><dt>タイムスタンプ</dt><dd><span class="empty">未取得</span></dd></div>
+          <div><dt>参考・切り抜き</dt><dd><a href="https://www.youtube.com/watch?v=zflckm50HrU">youtube.com/watch?v=zflckm50HrU</a></dd></div>
+        </div>
+        <p class="src">沖縄タイムス（2026-06-20 8:30公開）「中道・立憲・公明の合流『辺野古容認へ大きな一歩』国民民主・榛葉幹事長が持論 沖縄県知事選の争点でも言及」<br>
+        <a href="https://www.okinawatimes.co.jp/articles/-/1863109">okinawatimes.co.jp/articles/-/1863109</a></p>
+      </div>
+    </article>
+
+    <article class="rec c">
+      <div class="rec-head">
+        <span class="rid">S-4</span>
+        <span class="rdate">2026-06 中旬</span>
+        <span class="rwhere">場所が未確定 — 定例会見か、島根での党会合か</span>
+        <span class="badge c">確度 C</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>1+1は3にもならなかったね。2にもならなかった。計算したら0.28なんですよね。これで参議院も同じように中道になって、どれだけの突破力や国民からの期待があるのか。そう簡単でないと思いますよ</blockquote>
+        <p>衆院で立憲＋公明が合流して中道ができたが、議席・支持は足し算にならず大きく目減りした、という数字での皮肉。
+        続けて<b>参院でも同じことをやる意味があるのかと、3党合流の実効性そのものに疑問</b>を呈している。
+        S-1 の「0.5」と同じ論法の発展形。</p>
+        <div class="fields">
+          <div><dt>会見リンク</dt><dd><span class="empty">特定できず</span></dd></div>
+          <div><dt>タイムスタンプ</dt><dd><span class="empty">未取得</span></dd></div>
+        </div>
+        <p><b>要確認：</b>検索結果の要約に食い違いがあった。
+        <b>説A</b>＝6月19日の定例会見での発言／<b>説B</b>＝島根県連の会合に赴いた際の発言
+        （報じたBSSは山陰のローカル局で、同記事は立憲・辻元清美氏の「なかなか難しい」発言＝立憲島根県連の政治スクールも扱っている）。
+        <b>説Bなら国民民主公式YouTubeの会見動画には入っていない。</b>記事本文が読めておらず断定できない。</p>
+        <p class="src">BSS山陰放送「中道・立憲・公明、3党合流…立憲・辻元清美氏『なかなか難しい』 国民・榛葉賀津也氏は『1＋1は2にもならなかった、計算したら0.28』」<br>
+        <a href="https://news.yahoo.co.jp/articles/6815b196bd5c74e529960ed2d70ad3431275b1d6">Yahoo!ニュース版</a>　/　<a href="https://www.excite.co.jp/news/article/bss_1442108555259118348/">エキサイト版（全文が読める可能性）</a></p>
+      </div>
+    </article>
+
+    <article class="rec c">
+      <div class="rec-head">
+        <span class="rid">S-5</span>
+        <span class="rdate">2026-07 上旬</span>
+        <span class="rwhere">定例会見（7/3 または 7/10）</span>
+        <span class="badge c">確度 C</span>
+      </div>
+      <div class="rec-body">
+        <p>第三者チャンネルの切り抜きに
+        「再開した国会でもまだ週刊誌ネタをやる<b>立憲・中道</b>に榛葉幹事長がはっきり言う」
+        （ハッシュタグに #中道改革連合）が存在する。
+        <b>国会運営についての批判であり、合流協議そのものへの言及とは限らない。</b>要中身確認。</p>
+        <div class="fields">
+          <div><dt>会見リンク候補</dt><dd><a href="https://www.youtube.com/watch?v=juNznGeYvbs">7/3 juNznGeYvbs</a><br><a href="https://www.youtube.com/watch?v=r0I5_VLIRJ4">7/10 r0I5_VLIRJ4</a></dd></div>
+          <div><dt>タイムスタンプ</dt><dd><span class="empty">未取得</span></dd></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="rec pending">
+      <div class="rec-head">
+        <span class="rid">S-6</span>
+        <span class="rdate">2026-08-28（金）</span>
+        <span class="rwhere">幹事長定例会見 — 未確認・最優先</span>
+        <span class="badge c">未取得</span>
+      </div>
+      <div class="rec-body">
+        <p>合流見送りが党首会談で伝達された当日。定例会見は毎週金曜で、<b>8月28日は金曜</b>。
+        ただし<b>会見は14時、党首会談は16時45分</b>なので、<b>会見は会談より前</b>である点に注意。
+        見送り方針自体は前日8月27日に各社が報じているため、<b>それへの反応が入っている可能性は高い</b>。</p>
+        <p>この日の会見動画は検索インデックスに未収載で、URLを特定できなかった。</p>
+        <div class="fields">
+          <div><dt>会見記録（推定URL）</dt><dd><a href="https://new-kokumin.jp/news/business/20260828_2">new-kokumin.jp/news/business/20260828_2</a><br><span style="color:var(--ink-3);font-size:12px">※URLパターンからの推定。要確認</span></dd></div>
+          <div><dt>タイムスタンプ</dt><dd><span class="empty">未取得</span></dd></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="rec pending">
+      <div class="rec-head">
+        <span class="rid">S-7</span>
+        <span class="rdate">2026-09-04（金）</span>
+        <span class="rwhere">幹事長定例会見 — 未実施。本命</span>
+        <span class="badge c">未取得</span>
+      </div>
+      <div class="rec-body">
+        <p>破談を受けた最初の定例会見になる。
+        8月31日の3党再会談（最終結論）も踏まえた、まとまった論評が出る可能性が最も高い回。
+        <b>この文書を引き継いだら、まずここを押さえること。</b></p>
+      </div>
+    </article>
+  </section>
+
+  <section id="ogawa">
+    <h2 class="sec">小川淳也 代表（中道改革連合）の言及</h2>
+    <p class="sec-note">
+      公式チャンネルは <a href="https://www.youtube.com/@CRAJ2026">youtube.com/@CRAJ2026</a>。
+      当事者側であるため件数が多く、8月に入ってからのトーンダウンが明瞭に追える。
+    </p>
+
+    <article class="rec b">
+      <div class="rec-head">
+        <span class="rid">O-1</span><span class="rdate">2026-02-13</span>
+        <span class="rwhere">新代表就任会見</span><span class="badge b">確度 B</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>巨大与党としっかり対峙したい</blockquote>
+        <p>衆院選大敗（野田共同代表「私の器はだめだった」）を受けた代表選で選出された直後の会見。</p>
+        <p class="src">NHK「中道改革連合 代表選挙 新代表に小川淳也氏 党内・他党の反応は」<a href="https://news.web.nhk/newsweb/na/na-k10015050771000">記事</a>　/　時事「党再建へ道筋示せるか 新代表に小川淳也氏、問われる手腕」<a href="https://www.jiji.com/jc/article?k=2026021300704&amp;g=pol">記事</a></p>
+      </div>
+    </article>
+
+    <article class="rec a">
+      <div class="rec-head">
+        <span class="rid">O-2</span><span class="rdate">2026-05-27</span>
+        <span class="rwhere">政治評論家との対談</span><span class="badge a">確度 A</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>前のめりの公明に比べ、立憲は慎重というか腰が引けている。それは事実</blockquote>
+        <p>この時点での3党の温度差を当事者が明言したもの。結果的に、この見立ては8月の破談で裏づけられた。</p>
+      </div>
+    </article>
+
+    <article class="rec a">
+      <div class="rec-head">
+        <span class="rid">O-3</span><span class="rdate">2026-05-29</span>
+        <span class="rwhere">記者会見</span><span class="badge a">確度 A</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>極めて不適切な表現だった。痛切に反省しておわびする</blockquote>
+        <p>O-2 の「腰が引けている」発言を陳謝。立憲の水岡俊一代表には電話で直接謝罪した。
+        「3党連携の妨げにならないよう努力する」とも述べている。
+        <b>協議の主導権が中道側になかったことを示す場面。</b></p>
+        <p class="src">共同通信「小川氏、立民巡る発言陳謝『不適切で痛切に反省』」
+        <a href="https://news.yahoo.co.jp/articles/d7912ea51bca0809e3df79ee68892a191098cf9f">Yahoo!版</a>　/　<a href="https://www.okinawatimes.co.jp/articles/-/1847441">沖縄タイムス版</a>　/　時事「中道代表、立民に謝罪＝合流『腰引けている』発言」<a href="https://sp.m.jiji.com/article/show/3786482">記事</a></p>
+      </div>
+    </article>
+
+    <article class="rec a">
+      <div class="rec-head">
+        <span class="rid">O-4</span><span class="rdate">2026-06-01</span>
+        <span class="rwhere">選挙ドットコム インタビュー（会見ではない）</span><span class="badge a">確度 A</span>
+      </div>
+      <div class="rec-body">
+        <p>地方組織の誕生後も合流は<b>「慎重に見極める」</b>。前のめりではない姿勢を示した回。</p>
+        <p class="src"><a href="https://go2senkyo.com/articles/2026/06/01/136446.html">go2senkyo.com/articles/2026/06/01/136446.html</a></p>
+      </div>
+    </article>
+
+    <article class="rec a">
+      <div class="rec-head">
+        <span class="rid">O-5</span><span class="rdate">2026-06-19</span>
+        <span class="rwhere">定例会見 — 榛葉氏と同日</span><span class="badge a">確度 A</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>立憲民主党、公明党と3党間の組織課題を協議していきたい</blockquote>
+        <p>合流協議を<b>「組織課題」</b>という言い方で本格化させた回。
+        <b>同じ日に榛葉氏も合流に言及（S-3）しており、両者を並べて見るべき日。</b></p>
+        <div class="fields">
+          <div><dt>報道各社版</dt><dd>ANN/テレ朝 <a href="https://www.youtube.com/watch?v=rcyCzmB8dbc">rcyCzmB8dbc</a></dd></div>
+          <div><dt>公式版・タイムスタンプ</dt><dd><span class="empty">未取得</span></dd></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="rec a">
+      <div class="rec-head">
+        <span class="rid">O-6</span><span class="rdate">2026-07-17</span>
+        <span class="rwhere">記者会見</span><span class="badge a">確度 A</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>興味深く拝見している。率直に謙虚に耳を傾けるべきだ。……世論になびいていい場合と、逆風を真正面から受けながらやらなきゃいけないこともある。よく考えたい</blockquote>
+        <p>時事通信の世論調査で3党合流に<b>「賛成」11.1％／「思わない」47.3％</b>という結果が出たことに、
+        小川氏自ら会見で言及したもの。世論が明確に否定的であることを認めつつ、
+        <b>それでも進める可能性を残す言い回し</b>になっている。</p>
+        <p class="src">時事通信「中道の小川代表『世論に耳傾ける』 合流賛成１割に言及」
+        <a href="https://www.jiji.com/jc/article?k=2026071700862&amp;g=pol">jiji.com/jc/article?k=2026071700862</a></p>
+      </div>
+    </article>
+
+    <article class="rec b">
+      <div class="rec-head">
+        <span class="rid">O-7</span><span class="rdate">2026-07-30</span>
+        <span class="rwhere">選挙ドットコム インタビュー</span><span class="badge b">確度 B</span>
+      </div>
+      <div class="rec-body">
+        <p><b>「防衛は現実的かつ抑制的に」</b>— 3党合流に向けた「旗印」を語ったインタビュー。
+        あわせて「メモ発言」の真意にも触れている。
+        <b>合流の政策的な接着剤を何に置こうとしていたかが分かる資料。</b></p>
+        <p class="src"><a href="https://go2senkyo.com/articles/2026/07/30/140111.html">go2senkyo.com/articles/2026/07/30/140111.html</a></p>
+      </div>
+    </article>
+
+    <article class="rec a">
+      <div class="rec-head">
+        <span class="rid">O-8</span><span class="rdate">2026-07-31</span>
+        <span class="rwhere">3党党首会談 → 中間整理</span><span class="badge a">確度 A</span>
+      </div>
+      <div class="rec-body">
+        <p>手続きの煩雑さと資金負担から<b>新設合併は見送り</b>、
+        <b>「離党・入党」</b>と<b>「存続合併」</b>の2案に絞り、<b>8月末までに結論を得る</b>と明記した。
+        会談後に小川氏の会見／ぶら下がりがあったはずだが、公式動画は未確認。</p>
+        <p class="src">NHK <a href="https://news.web.nhk/newsweb/na/na-k10015192161000">記事</a>　/　KAB <a href="https://www.kab.co.jp/news/article/16774129">記事</a></p>
+      </div>
+    </article>
+
+    <article class="rec b">
+      <div class="rec-head">
+        <span class="rid">O-9</span><span class="rdate">2026-08-18</span>
+        <span class="rwhere">記者会見</span><span class="badge b">確度 B</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>3党がこのまま片輪走行を続けることが、最も3党の体力を消耗しちゃうなという気がしている。どういう形であれ組織課題に早めにケリをつけた方が、結論を見出した方が3党にとって望ましいんじゃないか</blockquote>
+        <p>秋の臨時国会を見据え、8月末をめどに<b>「責任を持って結論を出す」</b>と強調。
+        「片輪走行」＝衆院だけ合流し参院は別、という現状の比喩。</p>
+        <p class="src">NHK「中道 小川代表 立民・公明との合流“責任持って結論出す”」
+        <a href="https://news.web.nhk/newsweb/na/nd-20260818de44842">記事</a></p>
+      </div>
+    </article>
+
+    <article class="rec a">
+      <div class="rec-head">
+        <span class="rid">O-10</span><span class="rdate">2026-08-21</span>
+        <span class="rwhere">記者会見</span><span class="badge a">確度 A</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>身震いする思いで8月後半を迎えている</blockquote>
+        <p>8月末の期限は<b>「動かすつもりはない」</b>と明言した一方で、
+        参院で立憲・公明が統一会派を組む案については<b>「予断を持たず」</b>と述べ、
+        現状の別会派よりは望ましいが解決策と断定はできない、という趣旨にとどめた。</p>
+        <p>同じ会見で、中道の前衆院議員や離党者らが旗揚げした政治団体
+        「護憲リベラル共生（略称・ゴリラ）」について
+        <b>「中道の概念に反するものではない。いろいろな角度から自由闊達に議論を進めてほしい」</b>と歓迎姿勢を示した。
+        ゴリラは2月の衆院選に中道から出馬して落選した川内博史・阿部知子・平岡秀夫の各氏らが中心。
+        <b>合流協議と並行して党内が分岐し始めていた</b>ことを示す。</p>
+        <p class="src">時事通信「統一会派案『予断持たず』 中道代表、３党合流巡り」
+        <a href="https://www.jiji.com/jc/article?k=2026082100633&amp;g=pol">記事</a>　/　産経新聞「『ゴリラ』にエール、3党合流に『身震い』…中道小川氏 全ては『繰り返させて政権交代』」
+        <a href="https://news.yahoo.co.jp/articles/e7a49fcc9327dcf18ea84e15039f7dca4382e8e2">記事</a></p>
+      </div>
+    </article>
+
+    <article class="rec a">
+      <div class="rec-head">
+        <span class="rid">O-11</span><span class="rdate">2026-08-26</span>
+        <span class="rwhere">記者会見</span><span class="badge a">確度 A</span>
+      </div>
+      <div class="rec-body">
+        <blockquote>容易でない</blockquote>
+        <p>3党合流協議についての評価。8月末の期限を目前にした事実上のトーンダウンで、
+        <b>O-10 の「期限は動かさない」から5日で後退している</b>。</p>
+        <p class="src">日本経済新聞 <a href="https://www.nikkei.com/article/DGXZQOUA263JO0W6A820C2000000/">記事</a>　/　共同通信 <a href="https://news.yahoo.co.jp/articles/5b4ecc6ea63d348be59ac0e56de56d503b193e00">記事</a></p>
+      </div>
+    </article>
+
+    <article class="rec c">
+      <div class="rec-head">
+        <span class="rid">O-12</span><span class="rdate">2026-08-28</span>
+        <span class="rwhere">3党党首会談（16:45〜、約25分、国会内）</span><span class="badge c">確度 C</span>
+      </div>
+      <div class="rec-body">
+        <p>小川淳也（中道）・水岡俊一（立憲）・竹谷とし子（公明）の3代表が会談し、
+        立憲が合流しない方針を伝達。立憲は参院での公明との統一会派を呼びかけたが、
+        公明は基本政策の違いを理由に「考えていない」と否定した。</p>
+        <p><b>会談後、3党首は会場を後にし、取材に応じたのは3幹事長
+        （中道・階猛／立憲・田名部匡代／公明・西田実仁）だった。</b>
+        小川氏本人がこの日どこかで会見したかは未確認。</p>
+        <div class="fields">
+          <div><dt>小川氏本人の発言</dt><dd><span class="empty">確認できず</span></dd></div>
+          <div><dt>タイムスタンプ</dt><dd><span class="empty">未取得</span></dd></div>
+        </div>
+        <p class="src">NHK <a href="https://news.web.nhk/newsweb/na/nd-20260828de46878">記事</a>　/　時事「３党合流、白紙に」<a href="https://www.jiji.com/jc/article?k=2026082800158&amp;g=pol">記事</a>　/　東スポ <a href="https://www.tokyo-sports.co.jp/articles/-/401063">記事</a></p>
+      </div>
+    </article>
+
+    <article class="rec pending">
+      <div class="rec-head">
+        <span class="rid">O-13</span><span class="rdate">2026-08-31</span>
+        <span class="rwhere">3党再会談で最終結論 — 未実施</span><span class="badge c">未取得</span>
+      </div>
+      <div class="rec-body">
+        <p>28日の会談で、31日に再度会談して最終的な結論を出す方針が示された。
+        中道の存続そのものが焦点になる。公明出身議員の離脱（＝公明への引き揚げ）観測も出ている。</p>
+        <p class="src">日本経済新聞「中道から公明出身議員が離脱視野 合流頓挫、次の政界再編シナリオ」
+        <a href="https://www.nikkei.com/article/DGXZQOUA2768R0X20C26A8000000/">記事</a></p>
+      </div>
+    </article>
+  </section>
+
+  <section id="timeline">
+    <h2 class="sec">協議の時系列</h2>
+    <p class="sec-note">網掛けの行が節目。日付はすべて2026年。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>日付</th><th>出来事</th></tr></thead>
+        <tbody>
+          <tr><td class="d">01-15</td><td>立憲・公明の新党結成の動きを受け、玉木代表がぶら下がり会見。国民民主党は不参加。「結集軸が極めて曖昧で、国民の理解が得られるのか」</td></tr>
+          <tr class="key"><td class="d">01-16</td><td><b>野田佳彦（立憲代表）と斉藤鉄夫（公明代表）が共同会見。新党「中道改革連合（略称・中道）」の結成を正式発表</b>。衆院議員による新党で、両氏の共同代表制</td></tr>
+          <tr><td class="d">01-19</td><td>綱領発表会見</td></tr>
+          <tr><td class="d">01-23</td><td>衆議院解散</td></tr>
+          <tr class="key"><td class="d">02-08</td><td><b>衆院選 投開票。中道は公示前から大幅減</b>。翌9日、野田共同代表「私の器はだめだった」</td></tr>
+          <tr class="key"><td class="d">02-13</td><td><b>中道の代表選挙。小川淳也が新代表に</b></td></tr>
+          <tr><td class="d">02-19</td><td>時事世論調査：中道に「期待」18.9％。立憲・公明支持者の視線も厳しい</td></tr>
+          <tr><td class="d">05-27〜29</td><td>小川氏の「腰が引けている」発言 → 陳謝（O-2 / O-3）</td></tr>
+          <tr><td class="d">06-19</td><td>小川・榛葉の双方が合流に言及（O-5 / S-3）</td></tr>
+          <tr><td class="d">07-17</td><td>時事世論調査：合流に「賛成」11.1％／「思わない」47.3％。小川氏が会見で自ら言及（O-6）</td></tr>
+          <tr><td class="d">07-25 頃</td><td>中道と公明が「合流の方向性を8月末までに」と立憲に伝達</td></tr>
+          <tr class="key"><td class="d">07-31</td><td><b>3党党首会談で「中間整理」</b>。新設合併は見送り、「離党・入党」と「存続合併」の2案に絞り、8月末までに結論と明記</td></tr>
+          <tr><td class="d">08-16</td><td>時事「3党合流、小川氏正念場 迫る8月末、妥結描けず」</td></tr>
+          <tr><td class="d">08-21</td><td>小川「身震いする思いで8月後半を迎えている」「期限は動かすつもりはない」（O-10）</td></tr>
+          <tr><td class="d">08-23</td><td>立憲・水岡代表「地方組織の意見を踏まえ今週中にも結論を」</td></tr>
+          <tr><td class="d">08-25</td><td>時事「3党合流、中・立に先送り論 公明から『議員引き揚げ』の声」</td></tr>
+          <tr><td class="d">08-26</td><td>小川「容易でない」（O-11）。同日、輿石元参院副議長が「3党合流は政権の受け皿にならず、国民民主を巻き込む再編を」と発言</td></tr>
+          <tr class="key"><td class="d">08-27</td><td><b>立憲が早期合流の見送りを決定</b>。田名部幹事長が3党幹事長会談で中道・公明に伝達。地方議員の反発、来春の統一地方選への懸念が背景</td></tr>
+          <tr class="key"><td class="d">08-28</td><td><b>立憲が常任幹事会で正式決定。16:45から約25分の3党党首会談で伝達し、3党合流は白紙に</b>（O-12）</td></tr>
+          <tr><td class="d">08-31</td><td>3党が再度会談し最終的な結論を出す方針（O-13）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="todo">
+    <h2 class="sec">引き継ぎ事項</h2>
+    <p class="sec-note">この文書を受け取った人が、上から順にやれば埋まるように並べてある。</p>
+    <ol class="todo">
+      <li>
+        <b>榛葉幹事長の 8/28 会見と 9/4 会見を押さえる</b>
+        <p>最優先。8/28 は党首会談より前（会見14時／会談16:45）なので、前日報道への反応どまりの可能性がある。
+        破談を受けたまとまった論評は <b>9/4（金）の会見</b>に出る公算が大きい。</p>
+      </li>
+      <li>
+        <b>「0.28」発言（S-4）の場所を確定させる</b>
+        <p>定例会見での発言なら公式YouTubeに残っている。島根の党会合なら残っていない。
+        BSS山陰放送の記事本文を読めば決着する見込み。
+        <code>https://www.excite.co.jp/news/article/bss_1442108555259118348/</code> が全文を載せている可能性がある。</p>
+      </li>
+      <li>
+        <b>公式サイトの会見記録ページを使う（映像より速い）</b>
+        <p>国民民主党の公式サイトには会見の記録ページがあり、URLが規則的。
+        <code>https://new-kokumin.jp/news/business/YYYYMMDD_2</code> が幹事長定例会見、
+        <code>_1</code> がぶら下がり会見。
+        実在を確認済みなのは <code>20260619_2</code>（6/19 幹事長定例会見）、<code>20260115_1</code>（1/15 玉木代表ぶら下がり）、<code>20251017_2</code>。
+        <b>映像を見なくてもテキストで発言を拾える可能性が高い。ここから当たるのが早い。</b></p>
+      </li>
+      <li>
+        <b>タイムスタンプを実測する</b>
+        <p>本リポジトリの <code>scripts/scan.py</code> が、yt-dlp で公式チャンネルの会見を列挙し、
+        日本語字幕からキーワードのヒット箇所を <b>h:mm:ss ＋ <code>&amp;t=</code> 付きリンク ＋ 前後2〜3分の逐語</b>で吐き出す。
+        YouTube にアクセスできる環境で <code>./scripts/run.sh</code> を実行するだけ。
+        自動生成字幕なので、固有名詞は必ず音声で確認すること。</p>
+      </li>
+      <li>
+        <b>8/31 の3党再会談の結果をフォローする</b>
+        <p>中道が存続するのか、公明出身議員が引き揚げるのかが決まる。
+        ここが決着すると、榛葉氏の論評の中身も変わる。</p>
+      </li>
+      <li>
+        <b>「全ての言及」の網羅性を担保する</b>
+        <p>現状は<b>報道で記事化された分しか拾えていない</b>。
+        会見で言及したが記事にならなかった発言は漏れている。
+        網羅するには 3 か 4 の手段で会見そのものを総ざらいする必要がある。</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="sources">
+    <h2 class="sec">出典一覧</h2>
+    <p class="sec-note">すべて未読（アクセス遮断のため）。開いて確認すること。</p>
+    <div class="srcgrid">
+      <h3>公式チャンネル・公式サイト</h3>
+      <ul>
+        <li>国民民主党 公式YouTube — <a href="https://www.youtube.com/channel/UCJc_jL0yOBGychLgiTCGtPw">channel/UCJc_jL0yOBGychLgiTCGtPw</a></li>
+        <li>同「代表・幹事長会見」プレイリスト — <a href="https://www.youtube.com/playlist?list=PLlYTJtGiYHrHqs9j62uIMURpqA0TXdZN3">playlist?list=PLlYTJtGiYHrHqs9j62uIMURpqA0TXdZN3</a></li>
+        <li>新・国民民主党 会見記録 — <a href="https://new-kokumin.jp/tag/press-conference">new-kokumin.jp/tag/press-conference</a>／<a href="https://new-kokumin.jp/tag/shimba-kazuya">榛葉賀津也タグ</a></li>
+        <li>中道改革連合 公式YouTube — <a href="https://www.youtube.com/@CRAJ2026">youtube.com/@CRAJ2026</a></li>
+        <li>榛葉賀津也 X（会見予定が告知される） — <a href="https://x.com/shimba_office">@SHIMBA_OFFICE</a>／小川淳也 X — <a href="https://x.com/junyaog">@junyaog</a></li>
+      </ul>
+
+      <h3>合流の破談（8月下旬）</h3>
+      <ul>
+        <li>時事 8/25「３党合流、中・立に先送り論 公明から『議員引き揚げ』の声」 — <a href="https://www.jiji.com/jc/article?k=2026082500918&amp;g=pol">記事</a></li>
+        <li>時事 8/26「３党合流『政権受け皿にならず』国民民主巻き込む再編選択肢―輿石元参院副議長に聞く」 — <a href="https://www.jiji.com/jc/article?k=2026082600651&amp;g=pol">記事</a></li>
+        <li>時事 8/27「立民、３党合流見送りへ 中道存続、不透明に」 — <a href="https://www.jiji.com/jc/article?k=2026082700510&amp;g=pol">記事</a></li>
+        <li>時事 8/28「３党合流、白紙に 中立公党首会談」 — <a href="https://www.jiji.com/jc/article?k=2026082800158&amp;g=pol">記事</a></li>
+        <li>毎日「立憲が早期合流の見送り決定 午後にも中道、公明に伝達へ」 — <a href="https://news.yahoo.co.jp/articles/85f6269764a29c1b78c9a62561177ce9bcff171b">記事</a></li>
+        <li>朝日「立憲、中道・公明との早期合流見送りを伝達 3党幹事長が会談」 — <a href="https://news.yahoo.co.jp/articles/9103bf1fe03f2bb5ddf04ff056e0aa51a7b7ebb6">記事</a></li>
+        <li>NHK 8/28「３党が党首会談 立憲民主党が合流しない方針を伝達」 — <a href="https://news.web.nhk/newsweb/na/nd-20260828de46878">記事</a></li>
+        <li>NHK 8/23「立民 水岡代表 3党合流 地方組織の意見踏まえ今週中にも結論を」 — <a href="https://news.web.nhk/newsweb/na/nd-20260823de45891">記事</a></li>
+        <li>東スポ「３党党首会談で立憲が中道・公明との合流見送りを伝達『組織的交流はしない』」 — <a href="https://www.tokyo-sports.co.jp/articles/-/401063">記事</a></li>
+        <li>日経「中道から公明出身議員が離脱視野 合流頓挫、次の政界再編シナリオ」 — <a href="https://www.nikkei.com/article/DGXZQOUA2768R0X20C26A8000000/">記事</a></li>
+        <li>時事「3党合流、地方組織から異論 立民が幹事長会議」 — <a href="https://news.yahoo.co.jp/articles/5d788781b5f2cbd9888747f768a826a19eb103de">記事</a></li>
+      </ul>
+
+      <h3>榛葉幹事長・国民民主党</h3>
+      <ul>
+        <li>よろず〜「野党第1党が自爆しちゃった」「1+1が0.5に」 — <a href="https://news.yahoo.co.jp/articles/5d74232c123857ddd92452d1a0cb979f2341c606">記事</a></li>
+        <li>沖縄タイムス 6/20「合流『辺野古容認へ大きな一歩』榛葉幹事長が持論」 — <a href="https://www.okinawatimes.co.jp/articles/-/1863109">記事</a></li>
+        <li>BSS山陰放送「1＋1は2にもならなかった、計算したら0.28」 — <a href="https://news.yahoo.co.jp/articles/6815b196bd5c74e529960ed2d70ad3431275b1d6">Yahoo!版</a>／<a href="https://www.excite.co.jp/news/article/bss_1442108555259118348/">エキサイト版</a></li>
+        <li>日経「連合・芳野友子会長『中道改革連合の批判控えて』玉木代表に要請」 — <a href="https://www.nikkei.com/article/DGXZQOUA095JO0Z00C26A2000000/">記事</a></li>
+        <li>日経「国民民主党は新党に参加せず、玉木雄一郎氏『結集軸が曖昧』」 — <a href="https://www.nikkei.com/article/DGXZQOUA159P20V10C26A1000000/">記事</a></li>
+        <li>日経「国民民主の榛葉幹事長、辺野古移設『現実を受け入れるしかない』」 — <a href="https://www.nikkei.com/article/DGXZQOUA232AK0T20C26A5000000/">記事</a></li>
+        <li>日経 榛葉賀津也 記事一覧 — <a href="https://www.nikkei.com/topics/22A04915">topics/22A04915</a></li>
+      </ul>
+
+      <h3>小川代表・中道改革連合</h3>
+      <ul>
+        <li>共同「小川氏、立民巡る発言陳謝『不適切で痛切に反省』」 — <a href="https://news.yahoo.co.jp/articles/d7912ea51bca0809e3df79ee68892a191098cf9f">記事</a></li>
+        <li>時事 7/17「中道の小川代表『世論に耳傾ける』 合流賛成１割に言及」 — <a href="https://www.jiji.com/jc/article?k=2026071700862&amp;g=pol">記事</a></li>
+        <li>時事 8/16「３党合流、小川氏正念場 迫る８月末、妥結描けず」 — <a href="https://www.jiji.com/jc/article?k=2026081600204&amp;g=pol">記事</a></li>
+        <li>時事 8/21「統一会派案『予断持たず』 中道代表、３党合流巡り」 — <a href="https://www.jiji.com/jc/article?k=2026082100633&amp;g=pol">記事</a></li>
+        <li>産経「『ゴリラ』にエール、3党合流に『身震い』…中道小川氏」 — <a href="https://news.yahoo.co.jp/articles/e7a49fcc9327dcf18ea84e15039f7dca4382e8e2">記事</a></li>
+        <li>日経 8/26「小川淳也代表、3党合流協議『容易でない』」 — <a href="https://www.nikkei.com/article/DGXZQOUA263JO0W6A820C2000000/">記事</a></li>
+        <li>NHK 8/18「中道 小川代表 立民・公明との合流“責任持って結論出す”」 — <a href="https://news.web.nhk/newsweb/na/nd-20260818de44842">記事</a></li>
+        <li>選挙ドットコム 6/1「地方組織誕生後も『慎重に見極める』」 — <a href="https://go2senkyo.com/articles/2026/06/01/136446.html">記事</a></li>
+        <li>選挙ドットコム 7/30「防衛は現実的かつ抑制的に」 — <a href="https://go2senkyo.com/articles/2026/07/30/140111.html">記事</a></li>
+        <li>読売「中道改革連合の支持率２％、小川代表『存在意義を認められる状況に至っていない』」 — <a href="https://news.yahoo.co.jp/articles/5c6efb3b1a74c1b80120d4447d2f72112ff063a1">記事</a></li>
+        <li>日経「中道改革連合、高市政権対峙へ固まらぬ足元 小川淳也氏『暮らし支えて支えて…』」 — <a href="https://www.nikkei.com/article/DGXZQOUA240W00U6A220C2000000/">記事</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    作成 2026年8月29日。<br>
+    調査環境から youtube.com および主要報道サイトへの接続が遮断されていたため、
+    本文の記述はすべて検索エンジンのスニペット由来であり、一次記事・会見映像の確認を経ていない。
+    会見動画内のタイムスタンプは1件も取得できていない。<br>
+    確度 A／B／C と「未取得」の表示は、その未確認状態を明示するために付けたものである。引用の前に必ず裏を取ること。
+  </footer>
+
+  </main>
+</div>
+</div>
