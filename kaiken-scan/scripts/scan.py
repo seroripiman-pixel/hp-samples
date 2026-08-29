@@ -188,6 +188,10 @@ def download_captions(video_id: str, outdir: Path, langs: str) -> Path | None:
                     langs,
                     "--sub-format",
                     sub_format,
+                    "--sleep-requests",
+                    "1",
+                    "--retries",
+                    "3",
                     "--output",
                     str(outdir / "%(id)s.%(ext)s"),
                     f"https://www.youtube.com/watch?v={video_id}",
@@ -391,7 +395,8 @@ def main() -> int:
     args = ap.parse_args()
 
     if shutil.which("yt-dlp") is None:
-        log("yt-dlp が見つかりません。`pip install -r scripts/requirements.txt` を実行してください。")
+        log("yt-dlp が見つかりません。`brew install yt-dlp` か "
+            "`python3 -m pip install --user -r scripts/requirements.txt` を実行してください。")
         return 2
 
     cfg = json.loads(Path(args.config).read_text(encoding="utf-8"))

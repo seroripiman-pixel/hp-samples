@@ -26,13 +26,16 @@ Webページ版: https://claude.ai/code/artifact/c6706d55-c370-431e-9328-8436464
 YouTube にアクセスできる環境で実行すること。
 
 ```bash
-pip install -r scripts/requirements.txt
+brew install yt-dlp     # 既に入っていれば不要
 
 # 対象動画の一覧だけ確認（字幕はダウンロードしない）
 python3 scripts/scan.py --config config/shimba_kokumin.json --dry-run
 
 # 本番
 ./scripts/run.sh
+
+# 期間を絞る場合
+SINCE=2026-06-01 ./scripts/run.sh
 ```
 
 | 出力 | 中身 |
